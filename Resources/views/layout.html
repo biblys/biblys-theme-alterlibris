@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>{PAGE_TITLE}</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="google-site-verification" content="" />
+    <!-- <link rel="icon" type="image/png" href="/alterlibris/media/layout/favicon.png" /> -->
+    {CSS_CALLS} {OPENGRAPH} {MATOMO}
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="site-header noprint">
+        <h1 class="site-title">
+          <a href="/">{SITE_TITLE}</a>
+        </h1>
+        <div class="site-logo">
+          <a href="/">
+            <img src="/alterlibris/media/layout/logo.png" alt="{SITE_TITLE}" class="logo" />
+          </a>
+        </div>
+        <div class="site-catchline">
+          Des livres et des assos !
+        </div>
+        <div class="header-bar" class="hidden-print">
+          <form class="search-box" action="/articles/search">
+            <input
+              type="text"
+              class="search-field"
+              name="q"
+              id="search-field"
+              value="{SEARCH_TERMS}"
+              placeholder="Auteur, titre, référence…"
+            />
+            <button class="btn btn-default btn-sm search-button" type="submit">
+              <i aria-label="Recherche" class="fa fa-search"></i>
+            </button>
+          </form>
+
+          <div class="social-box">
+            <a
+              class="social-button"
+              href="https://www.facebook.com/AlterLibris"
+              title="Nous suivre sur Facebook"
+            >
+              <span aria-label="Facebook" class="fa fa-facebook"></span>
+            </a>
+            <a
+              class="social-button"
+              href="https://twitter.com/AlterLibris"
+              title="Nous suivre sur Twitter"
+            >
+              <span aria-label="Twitter" class="fa fa-twitter"></span>
+            </a>
+            <a class="social-button" href="/contact/" title="Nous contacter">
+              <span aria-label="Nous contacter" class="fa fa-envelope"></span>
+            </a>
+          </div>
+
+          <div class="cart-box">
+            <span id="myCart">{cart_oneline}</span>
+          </div>
+        </div>
+        <!-- /header-bar -->
+      </header>
+
+      <nav class="navbar" role="navigation">
+        <div class="">
+          <div class="navbar-header">
+            <button
+              type="button"
+              class="navbar-toggle collapsed"
+              data-toggle="collapse"
+              data-target="#navbar"
+              aria-expanded="false"
+              aria-controls="navbar"
+            >
+              <span class="sr-only">Menu</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Accueil</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="home-link">
+                <a href="/">Accueil</a>
+              </li>
+              <li>
+                <a href="/blog/">Actualités</a>
+              </li>
+              <li>
+                <a href="/evenements/">Événements</a>
+              </li>
+              <li>
+                <a href="/contact/">Contact</a>
+              </li>
+              <li>
+                <a href="/pages/newsletter">Newsletter</a>
+              </li>
+            </ul>
+          </div>
+          <!--/.navbar-collapse -->
+        </div>
+      </nav>
+
+      <main>
+        <div class="content">{PAGE_CONTENT}</div>
+      </main>
+
+      <footer class="site-footer noprint">
+        <p class="footer-links">
+          <a href="/pages/conditions-generales-de-vente">CGV</a>
+          &middot;
+          <a href="/pages/mentions-legales">Mentions légales</a>
+          &middot;
+          <a href="http://www.biblys.fr/" target="_blank">
+            <img
+              src="/assets/images/propulse-par-biblys.png"
+              alt="Propulsé par Biblys"
+              class="powered-by"
+            />
+          </a>
+        </p>
+      </footer>
+    </div>
+
+    {JS_CALLS}
+  </body>
+</html>
