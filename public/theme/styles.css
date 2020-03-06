@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap');
+
+/*
+  Couleurs principales
+  Rouge: 
+  Bleu: #000084
+*/
+
+:root {
+  --red: #e30713;
+  --blue: #4400af;
+  --serif: serif;
+  --sans-serif: 'Poppins', sans-serif;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10 pixels */
+}
+
+body {
+  font-family: var(--sans-serif);
+  font-size: 1.4rem;
+}
+
+/** 1. MOBILE **/
+
+/* 1.1 Layout */
+
+.wrapper {
+  margin: auto;
+  max-width: 1000px;
+  padding-top: 30px;
+  width: 100%;
+}
+
+/* 1.2 Header */
+
+.site-header {
+  padding-top: 10px;
+}
+
+.site-title {
+  display: none;
+}
+
+.site-logo .logo {
+  display: block;
+  margin: 0 auto 15px;
+  max-width: 90%;
+}
+
+.site-catchline {
+  color: var(--red);
+  font-size: 1.8em;
+  font-weight: 600;
+  text-align: center;
+}
+
+.social-button {
+  align-items: center;
+  justify-content: center;
+  background-color: var(--blue);
+  border-radius: 50%;
+  display: inline-flex;
+  height: 32px;
+  color: white;
+  margin-right: 3px;
+  width: 32px;
+}
+
+.social-button .fa {
+  font-size: 2rem;
+}
+
+.social-button .fa-envelope {
+  font-size: 1.8rem;
+}
+
+.header-bar {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.search-box {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  margin: auto;
+  text-align: center;
+  width: 100%;
+}
+
+.search-box .search-field {
+  border: 0;
+  border-bottom: 1px solid var(--blue);
+  padding: 4px 0;
+  margin-top: 0;
+  width: calc(100% - 40px);
+}
+
+.search-box .search-field::placeholder {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  color: var(--blue);
+  opacity: 0.5;
+}
+
+.search-box .search-button {
+  border: 0;
+}
+
+.social-box {
+  font-size: 3rem;
+  padding: 0 5px;
+}
+
+.cart-box {
+  padding: 5px;
+}
+
+.cart-box .not-empty {
+  background: #ff3c00;
+  border: 0;
+  color: white;
+}
+
+/** 2. TABLET **/ /** 3. DESKTOP **/
