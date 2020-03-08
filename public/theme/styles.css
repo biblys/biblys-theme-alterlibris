@@ -203,6 +203,29 @@ a {
   text-align: center;
 }
 
+/* 1.5 Home page */
+
+.biblys-carousel.swiper-container {
+  padding-bottom: 20px;
+}
+
+.biblys-carousel.swiper-container-horizontal > .swiper-pagination-bullets {
+  bottom: 0;
+}
+
+.biblys-carousel .swiper-pagination-bullet {
+  background-color: var(--red);
+  border-color: var(--red);
+  height: 10px;
+  opacity: 1;
+  width: 10px;
+}
+
+.biblys-carousel .swiper-pagination-bullet-active {
+  background-color: var(--purple);
+  border-color: var(--purple);
+}
+
 /** 2. TABLET **/
 
 @media (min-width: 768px) {
