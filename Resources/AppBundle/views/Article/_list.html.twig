@@ -1,0 +1,40 @@
+<div class="article-list">
+	{% for article in articles|slice(0, 5) %}
+		<div class="article-in-list">
+			<div class="article-cover">
+				{% if article.hasCover() %}
+					{{
+            article.getCoverTag({
+              size: "w600",
+              link: path("article_show", { slug: article.url }),
+							class: "article-cover-image"
+            }) | raw
+          }}
+				{% else %}
+					<a href="{{ path('article_show', { slug: article.url }) }}">
+						<div aria-label="{{ article.title }}" class="article-missing-cover"></div>
+					</a>
+				{% endif %}
+			</div>
+			<p class="article-title">
+				<a class="article-title-link" href="{{ path('article_show', { slug: article.url }) }}">
+					{{ article.title }}
+				</a>
+			</p>
+			<p class="article-publisher">
+				<a class="article-publisher-link" href="{{ path("publisher_show", { slug: article.publisher.url }) }}">
+					{{ article.publisher.name }}
+				</a>
+			</p>
+			<p class="article-price">{{ article.price|currency('EUR')|raw }}</p>
+			<div class="article-button">
+				{{ article.cartButton('Ajouter au panier')|raw }}
+			</div>
+			{% if article.has('catchline') %}
+				<div class="article-catchline">{{ article.catchline|raw }}</div>
+			{% endif %}
+		</div>
+	{% endfor %}
+</div>
+
+{% include 'AppBundle:Article:_list_pagination.html.twig' %}

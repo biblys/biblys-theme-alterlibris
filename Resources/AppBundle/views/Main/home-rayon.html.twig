@@ -1,0 +1,88 @@
+{# 
+  CAROUSEL (STATIQUE) 
+  Pour changer le contenu du carousel,
+  modifier le code ci-dessous
+#}
+
+<div class="biblys-carousel swiper-container" data-autoplay-delay="3000">
+	<div
+		class="swiper-wrapper">
+
+		{# Bannière 1 #}
+
+		<div class="swiper-slide">
+			<a href="/">
+				<img class="carousel-image" src="/media/carousel/image-1.jpg" alt="Bannière 1"/>
+			</a>
+		</div>
+
+		{# Bannière 2 #}
+
+		<div class="swiper-slide">
+			<a href="/">
+				<img class="carousel-image" src="/media/carousel/image-2.jpg" alt="Bannière 2"/>
+			</a>
+		</div>
+
+		{# Bannière 3 #}
+
+		<div class="swiper-slide">
+			<a href="/">
+				<img class="carousel-image" src="/media/carousel/image-3.jpg" alt="Bannière 3"/>
+			</a>
+		</div>
+	</div>
+
+	<div class="swiper-pagination"></div>
+</div>
+
+{# Colonnes #}
+
+<div class="home-cols">
+
+	<div
+		class="col-news">
+
+		{# 
+				      BLOC NOUVEAUTÉS (DYNAMIQUE) 
+				      Ce bloc affiche automatiquement les quatre derniers livres
+				      (quatre livres parus le plus récemment) du rayon "Page d'accueil"
+				    #}
+
+		<div class="home-articles">
+			<header class="header">
+				<h1 class="title">Nouveautés</h1>
+			</header>
+			<div class="article-list">
+				{% for article in articles|slice(0, 5) %}
+					<div class="article-in-list">
+						{% if article.hasCover() %}
+							{{
+            article.getCoverTag({
+              size: "w600",
+              link: path("article_show", { slug: article.url })
+            }) | raw
+          }}
+						{% else %}
+							<a href="{{ path('article_show', { slug: article.url }) }}">
+								<div aria-label="{{ article.title }}" class="article-missing-cover"></div>
+							</a>
+						{% endif %}
+						<p class="article-title">
+							<a href="{{ path('article_show', { slug: article.url }) }}">
+								{{ article.title }}
+							</a>
+						</p>
+						<p class="article-publisher">{{ article.publisher }}</p>
+						<p class="article-price">{{ article.price|currency('EUR') }}</p>
+						<p>{{ article.cartButton }}</p>
+						<p>{{ article.tagline }}</p>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+
+	<div class="col-headings"></div>
+
+</div>
