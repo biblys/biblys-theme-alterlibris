@@ -21,6 +21,12 @@ a {
   color: var(--purple);
 }
 
+h1.page-title {
+  border-bottom: 1px solid var(--red);
+  color: var(--red);
+  padding-bottom: 25px;
+}
+
 /** 1. MOBILE **/
 
 /* 1.1 Mobile Layout */
@@ -238,6 +244,7 @@ a {
   border-bottom: 1px solid var(--purple);
   box-sizing: border-box;
   margin: auto;
+  overflow: hidden;
   text-align: center;
   width: 320px;
 }
@@ -257,7 +264,7 @@ a {
 
 .article-list .article-title {
   margin-top: 10px;
-  padding: 15px 30px;
+  padding: 0 30px;
 }
 
 .article-list .article-title-link,
@@ -285,7 +292,7 @@ a {
   color: var(--purple);
   font-family: var(--serif);
   margin: 1em 0 0;
-  padding: 15px 30px;
+  padding: 0 30px;
 }
 
 .articles-pagination {
@@ -324,6 +331,18 @@ a {
 
 .articles-pagination .button-next:before {
   content: '⭢';
+}
+
+/* 1.7 Mobile Rayon */
+
+.rayon-description {
+  margin-bottom: 50px;
+}
+
+.rayon-description p {
+  color: var(--red);
+  font-family: var(--serif);
+  font-size: 2rem;
 }
 
 /** 2. TABLET **/
