@@ -1,5 +1,5 @@
 <div class="article-list">
-	{% for article in articles|slice(0, 5) %}
+	{% for article in articles %}
 		<div class="article-in-list">
 			<div class="article-cover">
 				{% if article.hasCover() %}
