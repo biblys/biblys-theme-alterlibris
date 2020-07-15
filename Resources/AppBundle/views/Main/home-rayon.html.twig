@@ -33,6 +33,9 @@
 		</div>
 	</div>
 
+	<div class="swiper-button-prev"></div>
+	<div class="swiper-button-next"></div>
+
 	<div class="swiper-pagination"></div>
 </div>
 
@@ -44,42 +47,16 @@
 		class="col-news">
 
 		{# 
-				      BLOC NOUVEAUTÉS (DYNAMIQUE) 
-				      Ce bloc affiche automatiquement les quatre derniers livres
-				      (quatre livres parus le plus récemment) du rayon "Page d'accueil"
-				    #}
+																      BLOC NOUVEAUTÉS (DYNAMIQUE) 
+																      Ce bloc affiche automatiquement les quatre derniers livres
+																      (quatre livres parus le plus récemment) du rayon "Page d'accueil"
+																    #}
 
 		<div class="home-articles">
 			<header class="header">
 				<h1 class="title">Nouveautés</h1>
 			</header>
-			<div class="article-list">
-				{% for article in articles|slice(0, 5) %}
-					<div class="article-in-list">
-						{% if article.hasCover() %}
-							{{
-            article.getCoverTag({
-              size: "w600",
-              link: path("article_show", { slug: article.url })
-            }) | raw
-          }}
-						{% else %}
-							<a href="{{ path('article_show', { slug: article.url }) }}">
-								<div aria-label="{{ article.title }}" class="article-missing-cover"></div>
-							</a>
-						{% endif %}
-						<p class="article-title">
-							<a href="{{ path('article_show', { slug: article.url }) }}">
-								{{ article.title }}
-							</a>
-						</p>
-						<p class="article-publisher">{{ article.publisher }}</p>
-						<p class="article-price">{{ article.price|currency('EUR') }}</p>
-						<p>{{ article.cartButton }}</p>
-						<p>{{ article.tagline }}</p>
-					</div>
-				{% endfor %}
-			</div>
+			{% include 'AppBundle:Article:_list.html.twig' %}
 		</div>
 	</div>
 
