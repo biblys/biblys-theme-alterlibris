@@ -140,6 +140,7 @@ h1.page-title {
 
 .navbar {
   font-size: 2rem;
+  margin-bottom: 0;
 }
 
 .navbar a {
@@ -211,11 +212,15 @@ h1.page-title {
 
 /* 1.5 Mobile Home page */
 
-.biblys-carousel.swiper-container-horizontal > .swiper-pagination-bullets {
+div.biblys-carousel.swiper-container {
+  padding-bottom: 30px;
+}
+
+div.biblys-carousel.swiper-container-horizontal > .swiper-pagination-bullets {
   bottom: 0;
 }
 
-.biblys-carousel .swiper-pagination-bullet {
+div.biblys-carousel .swiper-pagination-bullet {
   background-color: var(--red);
   border-color: var(--red);
   height: 10px;
@@ -223,13 +228,13 @@ h1.page-title {
   width: 10px;
 }
 
-.biblys-carousel .swiper-pagination-bullet-active {
+div.biblys-carousel .swiper-pagination-bullet-active {
   background-color: var(--purple);
   border-color: var(--purple);
 }
 
-.biblys-carousel .swiper-button-next,
-.biblys-carousel .swiper-button-prev {
+div.biblys-carousel .swiper-button-next,
+div.biblys-carousel .swiper-button-prev {
   display: none;
 }
 
@@ -415,7 +420,7 @@ h1.page-title {
   .navbar-nav {
     display: flex;
     justify-content: space-between;
-    padding: 15px 0;
+    padding: 15px 0 0;
     width: 100%;
   }
 
@@ -471,19 +476,19 @@ h1.page-title {
 
   /* 3.5 Desktop Home page */
 
-  .biblys-carousel .swiper-button-prev,
-  .biblys-carousel .swiper-button-next {
+  div.biblys-carousel .swiper-button-prev,
+  div.biblys-carousel .swiper-button-next {
     display: block;
-    /* opacity: 0; */
+    opacity: 0;
   }
 
-  .biblys-carousel:hover .swiper-button-prev,
-  .biblys-carousel:hover .swiper-button-next {
+  div.biblys-carousel:hover .swiper-button-prev,
+  div.biblys-carousel:hover .swiper-button-next {
     opacity: 0.75;
   }
 
-  .biblys-carousel .swiper-button-prev,
-  .biblys-carousel .swiper-button-next {
+  div.biblys-carousel .swiper-button-prev,
+  div.biblys-carousel .swiper-button-next {
     background-color: #9999cd;
     border-radius: 50%;
     height: 50px;
@@ -493,26 +498,26 @@ h1.page-title {
     transition: opacity 250ms;
     text-align: center;
     vertical-align: middle;
-    transform: translateY(-50%);
+    transform: translateY(calc(-50% - 10px));
   }
 
-  .biblys-carousel .swiper-button-next::after,
+  div.biblys-carousel .swiper-button-next::after,
   .swiper-container-rtl .swiper-button-prev::after {
     color: #4300ae;
     line-height: unset;
     content: '→';
   }
 
-  .biblys-carousel .swiper-button-prev::after,
+  div.biblys-carousel .swiper-button-prev::after,
   .swiper-container-rtl .swiper-button-next::after {
     color: #4300ae;
     line-height: unset;
     content: '←';
   }
 
-  .biblys-carousel .swiper-button-prev.swiper-button-disabled,
-  .biblys-carousel .swiper-button-next.swiper-button-disabled {
-    /* opacity: 0; */
+  div.biblys-carousel .swiper-button-prev.swiper-button-disabled,
+  div.biblys-carousel .swiper-button-next.swiper-button-disabled {
+    opacity: 0;
   }
 
   /* 3.4 Footer */
