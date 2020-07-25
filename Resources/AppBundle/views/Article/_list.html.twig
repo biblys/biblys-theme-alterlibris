@@ -26,7 +26,9 @@
 					{{ article.publisher.name }}
 				</a>
 			</p>
-			<p class="article-price">{{ article.price|currency('EUR')|raw }}</p>
+      {% if article.has('price') %}
+        <p class="article-price">{{ article.price|currency('EUR')|raw }}</p>
+      {% endif %}
 			<div class="article-button">
 				{{ article.cartButton('Ajouter au panier')|raw }}
 			</div>
