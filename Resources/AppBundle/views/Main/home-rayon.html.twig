@@ -39,9 +39,9 @@
   <div class="swiper-pagination"></div>
 </div>
 
-<div class="home-sections">
+<div class="home-cols">
 
-  <div class="home-articles-section">
+  <div class="home-left-col">
 
     {# 
       BLOC NOUVEAUTÉS (DYNAMIQUE) 
@@ -50,38 +50,39 @@
 
     <div class="home-articles">
       <header class="header">
-        <h1 class="home-section-title">Nouveautés</h1>
+        <h1 class="home-section-title home-articles-title">Nouveautés</h1>
       </header>
       {% include 'AppBundle:Article:_list.html.twig' %}
     </div>
+
+    <div class="home-facebook-section">
+      <h1 class="home-section-title">Suivez-nous sur Facebook</h1>
+      <img src="/theme/facebook.png" class="facebook-widget">
+    </div>
   </div>
 
-  <div class="home-headings-section">
-    <article class="home-heading">
-      <h1 class="home-section-title">Actualités</h1>
-      <a href="/">
-        <img src="/media/rubriques/image-1.jpg" class="home-heading-image" alt="Actualités" />
-      </a>
-    </article>
+  <div class="home-right-col">
+    <div class="home-headings-section">
+      <article class="home-heading">
+        <h1 class="home-section-title">Actualités</h1>
+        <a href="/">
+          <img src="/media/rubriques/image-1.jpg" class="home-heading-image" alt="Actualités" />
+        </a>
+      </article>
 
-    <article class="home-heading">
-      <h1 class="home-section-title">Rubrique 2</h1>
-      <a href="/">
-        <img src="/media/rubriques/image-2.jpg" class="home-heading-image" alt="Rubrique 2" />
-      </a>
-    </article>
+      <article class="home-heading">
+        <h1 class="home-section-title">Rubrique 2</h1>
+        <a href="/">
+          <img src="/media/rubriques/image-2.jpg" class="home-heading-image" alt="Rubrique 2" />
+        </a>
+      </article>
 
-    <article class="home-heading">
-      <h1 class="home-section-title">Rubrique 3</h1>
-      <a href="/">
-        <img src="/media/rubriques/image-3.jpg" class="home-heading-image" alt="Rubrique 3" />
-      </a>
-    </article>
+      <article class="home-heading">
+        <h1 class="home-section-title">Rubrique 3</h1>
+        <a href="/">
+          <img src="/media/rubriques/image-3.jpg" class="home-heading-image" alt="Rubrique 3" />
+        </a>
+      </article>
+    </div>
   </div>
-
-  <div class="home-facebook-section">
-    <h1 class="home-section-title">Suivez-nous sur Facebook</h1>
-    <img src="/theme/facebook.png" class="facebook-widget">
-  </div>
-
 </div>

@@ -255,6 +255,10 @@ div.biblys-carousel .swiper-button-prev {
   padding-bottom: 30px;
 }
 
+.home-articles-title {
+  border-bottom: 0;
+}
+
 .home-heading {
   margin-bottom: 50px;
 }
@@ -268,12 +272,6 @@ div.biblys-carousel .swiper-button-prev {
 }
 
 /* 1.6 Mobile Article List */
-
-.article-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
 
 .article-list .article-in-list {
   border-bottom: 1px solid var(--purple);
@@ -379,6 +377,13 @@ div.biblys-carousel .swiper-button-prev {
 
 .articles-pagination .button-next:before {
   content: '⭢';
+}
+
+/* 1.6.1 Mobile Article list on home page */
+
+.home-articles .article-list .article-in-list {
+  border-top: 1px solid var(--purple);
+  border-bottom: 0;
 }
 
 /* 1.7 Mobile Rayon */
@@ -514,27 +519,25 @@ div.biblys-carousel .swiper-button-prev {
 
   /* 2.5 Tablet Home Page */
 
-  .home-sections {
+  .home-headings-section {
     display: flex;
     flex-wrap: wrap;
-  }
-
-  .home-sections .home-articles-section,
-  .home-sections .home-headings-section {
-    width: 50%;
-  }
-
-  .home-sections .home-facebook-section {
-    width: 100%;
+    justify-content: space-evenly;
   }
 
   /* 2.6 Tablet Article List */
 
-  .article-list .article-in-list {
+  .article-list {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 650px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .article-list .article-in-list {
+    border-top: 1px solid var(--purple);
+    border-bottom: 0;
+    margin: 0 20px 0 0;
+    width: 320px;
   }
 
   .article-list .article-cover {
@@ -559,6 +562,12 @@ div.biblys-carousel .swiper-button-prev {
 
   .navbar {
     font-size: 2.25rem;
+  }
+
+  /* 3.4 Footer */
+
+  .site-footer .footer-col {
+    padding: 0 15px;
   }
 
   /* 3.5 Desktop Home page */
@@ -607,9 +616,28 @@ div.biblys-carousel .swiper-button-prev {
     opacity: 0;
   }
 
-  /* 3.4 Footer */
+  .home-cols {
+    display: flex;
+    justify-content: space-between;
+  }
 
-  .site-footer .footer-col {
-    padding: 0 15px;
+  .home-cols .home-left-col {
+    width: 670px;
+  }
+
+  .home-articles-title {
+    border: 0;
+    margin-bottom: 0;
+  }
+
+  .home-cols .home-right-col {
+    width: 290px;
+  }
+
+  .article-list .article-in-list {
+    border-top: 1px solid var(--purple);
+    border-bottom: 0;
+    margin: 0 20px 0 0;
+    width: 315px;
   }
 }
