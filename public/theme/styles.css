@@ -198,6 +198,10 @@ h1.page-title {
   font-weight: bold;
 }
 
+.site-footer .footer-presentation a {
+  color: var(--red);
+}
+
 .site-footer .col-text {
   font-family: --serif;
   font-size: 2rem;
