@@ -512,6 +512,22 @@ div.biblys-carousel .swiper-button-prev {
     width: 33%;
   }
 
+  /* 2.5 Tablet Home Page */
+
+  .home-sections {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .home-sections .home-articles-section,
+  .home-sections .home-headings-section {
+    width: 50%;
+  }
+
+  .home-sections .home-facebook-section {
+    width: 100%;
+  }
+
   /* 2.6 Tablet Article List */
 
   .article-list .article-in-list {
