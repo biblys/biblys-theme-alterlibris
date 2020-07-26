@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,500;1,400;1,500&display=swap');
 
 :root {
-  --red: #e30713;
+  --red: #e30513;
   --light-red: #fe0000;
   --purple: #4400af;
   --serif: 'Literata', serif;
@@ -72,7 +72,7 @@ h1.page-title {
   display: inline-flex;
   height: 32px;
   color: white;
-  margin-right: 3px;
+  margin-right: 13px;
   width: 32px;
 }
 
@@ -148,6 +148,7 @@ h1.page-title {
 
 .navbar a {
   color: var(--purple);
+  font-weight: bold;
 }
 
 .navbar-nav {
@@ -366,17 +367,37 @@ div.biblys-carousel .swiper-button-prev {
   /* 2.2 Tablet Header */
 
   .site-header {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
     padding-bottom: 8px;
+  }
+
+  .site-logo .logo {
+    margin: 0;
+  }
+
+  .site-catchline {
+    flex-grow: 1;
+    font-size: 37px;
   }
 
   .header-bar {
     align-items: flex-end;
+    width: 100%;
   }
 
   .header-bar .social-box {
     order: 1;
     padding: 0;
     width: 150px;
+  }
+
+  .social-button:hover {
+    background-color: var(--red);
+    color: white;
+    text-decoration: none;
   }
 
   .header-bar .search-box {
@@ -472,6 +493,15 @@ div.biblys-carousel .swiper-button-prev {
 
 @media (min-width: 1024px) {
   /* 3.1 Desktop Layout */
+
+  .site-logo .logo {
+    max-width: none;
+    width: 390px;
+  }
+
+  .site-catchline {
+    font-size: 53px;
+  }
 
   .navbar {
     font-size: 2.25rem;
