@@ -1,6 +1,6 @@
 /** GENERAL **/
 
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,500;1,400;1,500&display=swap');
 
 :root {
@@ -246,6 +246,27 @@ div.biblys-carousel .swiper-button-prev {
   display: none;
 }
 
+.home-section-title {
+  border-bottom: 1px solid var(--purple);
+  color: var(--purple);
+  font-weight: 600;
+  font-size: 42px;
+  margin-bottom: 15px;
+  padding-bottom: 30px;
+}
+
+.home-heading {
+  margin-bottom: 50px;
+}
+
+.home-heading .home-heading-image {
+  max-width: 100%;
+}
+
+.facebook-widget {
+  max-width: 100%;
+}
+
 /* 1.6 Mobile Article List */
 
 .article-list {
@@ -259,6 +280,7 @@ div.biblys-carousel .swiper-button-prev {
   box-sizing: border-box;
   margin: auto;
   overflow: hidden;
+  padding: 15px 0 40px;
   text-align: center;
   width: 320px;
 }
@@ -266,25 +288,34 @@ div.biblys-carousel .swiper-button-prev {
 .article-list .article-cover {
   align-items: center;
   display: flex;
+  height: 315px;
   justify-content: center;
+  width: 315px;
 }
 
 .article-list .article-cover-image {
   display: block;
   margin: auto;
-  max-height: 320px;
-  max-width: 100%;
+  max-height: 315px;
+  max-width: 315px;
 }
 
 .article-list .article-title {
-  margin-top: 10px;
+  font-weight: bold;
+  font-size: 2.8rem;
+  line-height: 3rem;
+  margin-top: 20px;
   padding: 0 30px;
 }
 
-.article-list .article-title-link,
+.article-list .article-publisher {
+  font-size: 1.2rem;
+}
+
 .article-list .article-price {
   color: var(--purple);
-  font-size: 2.5rem;
+  font-weight: bold;
+  font-size: 2.4rem;
 }
 
 .article-list .article-publisher-link {
@@ -295,7 +326,8 @@ div.biblys-carousel .swiper-button-prev {
 .article-list .cart-button {
   background-color: var(--purple);
   border-radius: 0;
-  font-size: 2rem;
+  font-size: 2.4rem;
+  font-weight: 600;
 }
 
 .article-list .cart-button .fa {
@@ -305,6 +337,8 @@ div.biblys-carousel .swiper-button-prev {
 .article-list .article-catchline p {
   color: var(--purple);
   font-family: var(--serif);
+  font-size: 14px;
+  line-height: auto;
   margin: 1em 0 0;
   padding: 0 30px;
 }
