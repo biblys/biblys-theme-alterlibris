@@ -27,7 +27,8 @@ a {
 h1.page-title {
   border-bottom: 1px solid var(--red);
   color: var(--red);
-  padding-bottom: 25px;
+  margin-bottom: 15px;
+  padding-bottom: 30px;
 }
 
 /** 1. MOBILE **/
@@ -36,7 +37,7 @@ h1.page-title {
 
 .wrapper {
   margin: auto;
-  max-width: 1000px;
+  max-width: 1024px;
   padding: 30px 5px;
   width: 100%;
 }
@@ -389,13 +390,13 @@ div.biblys-carousel .swiper-button-prev {
 /* 1.7 Mobile Rayon */
 
 .rayon-description {
-  margin-bottom: 50px;
+  margin-bottom: 65px;
 }
 
 .rayon-description p {
   color: var(--red);
   font-family: var(--serif);
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 /** 2. TABLET **/
@@ -404,7 +405,7 @@ div.biblys-carousel .swiper-button-prev {
   /* 2.1 Tablet Layout */
 
   .wrapper {
-    padding: 0 10px 30px;
+    padding: 0 12px 30px;
   }
 
   /* 2.2 Tablet Header */
@@ -634,10 +635,25 @@ div.biblys-carousel .swiper-button-prev {
     width: 290px;
   }
 
+  /* 3.6 Desktop Article List */
+
+  .article-list {
+    justify-content: flex-start;
+    margin: 0 -13.75px;
+  }
+
   .article-list .article-in-list {
-    border-top: 1px solid var(--purple);
-    border-bottom: 0;
-    margin: 0 20px 0 0;
+    margin: 0 13.75px;
     width: 315px;
+  }
+
+  /* Home article list */
+
+  .article-list {
+    margin: 0 -20px;
+  }
+
+  .home-articles .article-list .article-in-list {
+    margin: 0 20px;
   }
 }
