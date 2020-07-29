@@ -21,8 +21,10 @@
         <a href="{{ path('publisher_show', { slug: article.publisher.url }) }}">{{ article.publisher.name }}</a>
       </p>
       {% if article.has('catchline') %}
-        {{ article.catchline|raw }}
-        <a href="#article-content">Plus de détails →</a>
+        <div class="article-catchline">
+          {{ article.catchline|raw }}
+          <a class="article-catchline-readmore" href="#article-content">Plus de détails →</a>
+        </div>
       {% endif %}
       {% if article.has('price') %}
         <p class="article-price">{{ article.price|currency('EUR')|raw }}</p>
@@ -33,6 +35,9 @@
           {{ article.cartButton('Ajouter au panier')|raw }}
         </div>
       {% endif %}
+      <p class="article-share">
+        Partager sur les réseaux sociaux :
+      </p>
       {{ article.shareButtons({ buttons: { mail: false }})|raw }}
     </div>
   </header>

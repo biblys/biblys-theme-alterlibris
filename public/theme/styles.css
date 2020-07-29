@@ -4,11 +4,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,500;1,400;1,500&display=swap');
 
 :root {
+  /* Colors */
   --red: #e30513;
   --light-red: #fe0000;
   --purple: #4400af;
+
+  /* Font families */
   --serif: 'Literata', serif;
   --sans-serif: 'IBM Plex Sans Condensed', sans-serif;
+
+  /* Font weights */
+  --regular: 400;
+  --medium: 500;
+  --semi-bold: 600;
 }
 
 html {
@@ -61,7 +69,7 @@ h1.page-title {
 .site-catchline {
   color: var(--red);
   font-size: 1.8em;
-  font-weight: 600;
+  font-weight: var(--semi-bold);
   text-align: center;
 }
 
@@ -149,7 +157,7 @@ h1.page-title {
 
 .navbar a {
   color: var(--purple);
-  font-weight: bold;
+  font-weight: var(--medium);
 }
 
 .navbar-nav {
@@ -196,7 +204,7 @@ h1.page-title {
 
 .site-footer .footer-presentation .col-title {
   font-size: 2.5rem;
-  font-weight: bold;
+  font-weight: var(--medium);
 }
 
 .site-footer .footer-presentation a {
@@ -250,7 +258,7 @@ div.biblys-carousel .swiper-button-prev {
 .home-section-title {
   border-bottom: 1px solid var(--purple);
   color: var(--purple);
-  font-weight: 600;
+  font-weight: var(--semi-bold);
   font-size: 42px;
   margin-bottom: 15px;
   padding-bottom: 30px;
@@ -300,7 +308,7 @@ div.biblys-carousel .swiper-button-prev {
 }
 
 .article-list .article-title {
-  font-weight: bold;
+  font-weight: var(--medium);
   font-size: 2.8rem;
   line-height: 3rem;
   margin-top: 20px;
@@ -313,7 +321,7 @@ div.biblys-carousel .swiper-button-prev {
 
 .article-list .article-price {
   color: var(--purple);
-  font-weight: bold;
+  font-weight: var(--medium);
   font-size: 2.4rem;
 }
 
@@ -322,14 +330,16 @@ div.biblys-carousel .swiper-button-prev {
   font-family: var(--serif);
 }
 
-.article-list .cart-button {
+.article-list .cart-button,
+.article-page .cart-button {
   background-color: var(--purple);
   border-radius: 0;
   font-size: 2.4rem;
-  font-weight: 600;
+  font-weight: var(--semi-bold);
 }
 
-.article-list .cart-button .fa {
+.article-list .cart-button .fa,
+.article-page .cart-button .fa {
   display: none;
 }
 
@@ -356,7 +366,7 @@ div.biblys-carousel .swiper-button-prev {
 
 .articles-pagination .pagination-page-current {
   color: var(--red);
-  font-weight: bold;
+  font-weight: var(--medium);
 }
 
 .articles-pagination .pagination-button {
@@ -397,6 +407,143 @@ div.biblys-carousel .swiper-button-prev {
   color: var(--red);
   font-family: var(--serif);
   font-size: 1.8rem;
+}
+
+/* 1.8 Article Page */
+
+.article-page {
+  /* margin-top: 50px; */
+  margin-top: 25px;
+}
+
+.article-page .article-breadcrumbs,
+.article-page .article-breadcrumbs a {
+  color: var(--red);
+  font-family: var(--serif);
+  font-size: 1.3rem;
+}
+
+.article-page .article-header {
+  /* margin-top: 40px; */
+  margin-top: 20px;
+}
+
+.article-page .article-cover-image {
+  border: 1px solid lightgray;
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  /* padding: 50px 25px; */
+  padding: 25px 12.5px;
+}
+
+.article-page .article-infos {
+  color: var(--purple);
+  font-family: var(--serif);
+}
+
+.article-page .article-infos a {
+  color: var(--red);
+}
+
+.article-page .article-title {
+  border: 0;
+  color: var(--purple);
+  font-family: var(--sans-serif);
+  font-size: 4.2rem;
+  font-weight: var(--semi-bold);
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.article-page .article-publisher {
+  font-size: 16px;
+  /* margin-top: 30px;
+  margin-bottom: 46px; */
+  margin-top: 15px;
+  margin-bottom: 23px;
+}
+
+.article-page .article-catchline {
+  font-size: 1.8rem;
+  line-height: 2.7rem;
+  /* margin-bottom: 46px; */
+  margin-bottom: 23px;
+}
+
+.article-page .article-catchline p {
+  margin-bottom: 0;
+}
+
+.article-page .article-catchline-readmore {
+  font-size: 1.2rem;
+}
+
+.article-page .article-price {
+  color: var(--purple);
+  font-family: var(--sans-serif);
+  font-size: 3.0rem;
+  font-weight: var(--semi-bold);
+}
+
+.article-page a.cart-button {
+  border-color: var(--red);
+  background: var(--red);
+  font-family: var(--sans-serif);
+  color: white;
+}
+
+.article-page .article-share {
+  font-size: 1.6rem;
+  /* margin-top: 40px; */
+  margin-top: 20px;
+}
+
+.article-page .share-buttons a {
+  color: purple;
+}
+
+.article-page .article-content {
+  border-bottom: 1px solid var(--purple);
+  /* margin-top: 70px;
+  padding-bottom: 70px; */
+  margin-top: 35px;
+  padding-bottom: 35px;
+}
+
+.article-page .section-title {
+  border-bottom: 1px solid var(--purple);
+  color: var(--purple);
+  font-size: 3.0rem;
+  font-weight: var(--semi-bold);
+  /* margin-bottom: 30px;
+  padding-bottom: 30px; */
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+
+.article-page .article-summary {
+  color: var(--purple);
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  line-height: 2.7rem;
+}
+
+.article-page .article-details {
+  color: var(--purple);
+}
+
+.article-page .article-details dt {
+  font-size: 2.2rem;
+  font-weight: var(--medium);
+}
+
+.article-page .article-details dd {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  line-height: 2.1rem;
+  /* margin-bottom: 25px; */
+  margin-bottom: 12.5px;
 }
 
 /** 2. TABLET **/
