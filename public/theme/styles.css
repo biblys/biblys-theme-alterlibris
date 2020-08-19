@@ -499,8 +499,19 @@ div.biblys-carousel .swiper-button-prev {
   margin-top: 20px;
 }
 
+.article-page .share-buttons li {
+  margin-right: 12px;
+}
+
 .article-page .share-buttons a {
-  color: purple;
+  align-items: center;
+  border-radius: 50%;
+  display: inline-flex;
+  background: var(--purple);
+  color: white;
+  height: 40px;
+  justify-content: center;
+  width: 40px;
 }
 
 .article-page .article-content {

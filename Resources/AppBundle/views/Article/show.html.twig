@@ -38,7 +38,14 @@
       <p class="article-share">
         Partager sur les réseaux sociaux :
       </p>
-      {{ article.shareButtons({ buttons: { mail: false }})|raw }}
+      {{ article.shareButtons({ 
+        buttons: { mail: false },
+        icons: {
+          facebook: 'facebook',
+          twitter: 'twitter',
+          pinterest: 'pinterest-p'
+        }
+      })|raw }}
     </div>
   </header>
 
