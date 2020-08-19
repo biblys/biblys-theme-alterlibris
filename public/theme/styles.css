@@ -702,7 +702,6 @@ div.biblys-carousel .swiper-button-prev {
   .article-page .article-header {
     display: flex;
     justify-content: space-between;
-    /* margin-top: 40px; */
   }
 
   .article-page .article-cover {
@@ -712,30 +711,14 @@ div.biblys-carousel .swiper-button-prev {
 
   .article-page .article-cover-image {
     max-height: 100%;
-    /* padding: 50px 25px; */
   }
 
   .article-page .article-infos {
     width: calc(100vw - 350px);
   }
 
-  .article-page .article-publisher {
-    /* margin-top: 30px;
-    margin-bottom: 46px; */
-  }
-
-  .article-page .article-catchline {
-    /* margin-bottom: 46px; */
-  }
-
-  .article-page .article-share {
-    /* margin-top: 40px; */
-  }
-
   .article-page .article-content {
     display: flex;
-    /* margin-top: 70px; */
-    /* padding-bottom: 70px; */
   }
 
   .article-page .article-summary {
@@ -745,15 +728,6 @@ div.biblys-carousel .swiper-button-prev {
   .article-page .article-details {
     margin-left: 30px;
     width: 50%;
-  }
-
-  .article-page .section-title {
-    /* margin-bottom: 30px; */
-    /* padding-bottom: 30px; */
-  }
-
-  .article-page .article-details dd {
-    /* margin-bottom: 25px; */
   }
 }
 
@@ -865,5 +839,56 @@ div.biblys-carousel .swiper-button-prev {
 
   .home-articles .article-list .article-in-list {
     margin: 0 20px;
+  }
+
+  /* 3.8 Desktop Article page */
+
+  .article-page .article-header {
+    margin-top: 40px;
+  }
+
+  .article-page .article-cover {
+    flex-shrink: 0;
+    height: 500px;
+    width: 500px;
+  }
+
+  .article-page .article-cover-image {
+    padding: 50px 25px;
+  }
+
+  .article-page .article-publisher {
+    margin-top: 30px;
+    margin-bottom: 46px;
+  }
+
+  .article-page .article-catchline {
+    margin-bottom: 46px;
+  }
+
+  .article-page .article-share {
+    margin-top: 40px;
+  }
+
+  .article-page .article-content {
+    margin-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  .article-page .article-summary {
+    width: 60%;
+  }
+
+  .article-page .article-details {
+    width: 40%;
+  }
+
+  .article-page .section-title {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+  }
+
+  .article-page .article-details dd {
+    margin-bottom: 25px;
   }
 }
