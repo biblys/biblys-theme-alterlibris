@@ -160,6 +160,29 @@ h1.page-title {
   font-weight: var(--medium);
 }
 
+.nav>li>a:focus, 
+.nav>li>a:hover {
+  background-color: transparent;
+}
+
+.nav .open>a, 
+.nav .open>a:focus, 
+.nav .open>a:hover {
+  background-color: transparent;
+  border: 0;
+  color: var(--red);
+}
+
+.navbar .navbar-nav .open .dropdown-menu {
+  background-color: var(--red);
+}
+
+.navbar .dropdown-menu > li > a {
+  color: white;
+  font-weight: var(--medium);
+  font-size: 1.8rem;
+}
+
 .navbar-nav {
   margin-top: -10px;
 }
@@ -412,7 +435,6 @@ div.biblys-carousel .swiper-button-prev {
 /* 1.8 Article Page */
 
 .article-page {
-  /* margin-top: 50px; */
   margin-top: 25px;
 }
 
@@ -424,7 +446,6 @@ div.biblys-carousel .swiper-button-prev {
 }
 
 .article-page .article-header {
-  /* margin-top: 40px; */
   margin-top: 20px;
 }
 
@@ -433,7 +454,6 @@ div.biblys-carousel .swiper-button-prev {
   display: block;
   margin: auto;
   max-width: 100%;
-  /* padding: 50px 25px; */
   padding: 25px 12.5px;
 }
 
@@ -458,8 +478,6 @@ div.biblys-carousel .swiper-button-prev {
 
 .article-page .article-publisher {
   font-size: 16px;
-  /* margin-top: 30px;
-  margin-bottom: 46px; */
   margin-top: 15px;
   margin-bottom: 23px;
 }
@@ -467,7 +485,6 @@ div.biblys-carousel .swiper-button-prev {
 .article-page .article-catchline {
   font-size: 1.8rem;
   line-height: 2.7rem;
-  /* margin-bottom: 46px; */
   margin-bottom: 23px;
 }
 
@@ -495,7 +512,6 @@ div.biblys-carousel .swiper-button-prev {
 
 .article-page .article-share {
   font-size: 1.6rem;
-  /* margin-top: 40px; */
   margin-top: 20px;
 }
 
@@ -516,8 +532,6 @@ div.biblys-carousel .swiper-button-prev {
 
 .article-page .article-content {
   border-bottom: 1px solid var(--purple);
-  /* margin-top: 70px;
-  padding-bottom: 70px; */
   margin-top: 35px;
   padding-bottom: 35px;
 }
@@ -527,8 +541,6 @@ div.biblys-carousel .swiper-button-prev {
   color: var(--purple);
   font-size: 3.0rem;
   font-weight: var(--semi-bold);
-  /* margin-bottom: 30px;
-  padding-bottom: 30px; */
   margin-bottom: 15px;
   padding-bottom: 15px;
 }
@@ -553,7 +565,6 @@ div.biblys-carousel .swiper-button-prev {
   font-family: var(--serif);
   font-size: 1.3rem;
   line-height: 2.1rem;
-  /* margin-bottom: 25px; */
   margin-bottom: 12.5px;
 }
 
