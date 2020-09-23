@@ -160,14 +160,14 @@ h1.page-title {
   font-weight: var(--medium);
 }
 
-.nav>li>a:focus, 
-.nav>li>a:hover {
+.nav > li > a:focus,
+.nav > li > a:hover {
   background-color: transparent;
 }
 
-.nav .open>a, 
-.nav .open>a:focus, 
-.nav .open>a:hover {
+.nav .open > a,
+.nav .open > a:focus,
+.nav .open > a:hover {
   background-color: transparent;
   border: 0;
   color: var(--red);
@@ -181,6 +181,10 @@ h1.page-title {
   color: white;
   font-weight: var(--medium);
   font-size: 1.8rem;
+}
+
+.navbar .dropdown-menu > li > a:hover {
+  color: var(--purple);
 }
 
 .navbar-nav {
@@ -499,7 +503,7 @@ div.biblys-carousel .swiper-button-prev {
 .article-page .article-price {
   color: var(--purple);
   font-family: var(--sans-serif);
-  font-size: 3.0rem;
+  font-size: 3rem;
   font-weight: var(--semi-bold);
 }
 
@@ -539,7 +543,7 @@ div.biblys-carousel .swiper-button-prev {
 .article-page .section-title {
   border-bottom: 1px solid var(--purple);
   color: var(--purple);
-  font-size: 3.0rem;
+  font-size: 3rem;
   font-weight: var(--semi-bold);
   margin-bottom: 15px;
   padding-bottom: 15px;
