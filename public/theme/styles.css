@@ -114,15 +114,16 @@ h1.page-title {
 .search-box .search-field {
   border: 0;
   border-bottom: 1px solid var(--purple);
-  padding: 4px 0;
+  color: var(--purple);
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  padding: 4px;
   margin-top: 0;
+  outline-color: var(--purple);
   width: calc(100% - 20px);
 }
 
 .search-box .search-field::placeholder {
-  font-family: var(--serif);
-  font-size: 1.6rem;
-  color: var(--purple);
   opacity: 0.5;
 }
 
@@ -130,7 +131,7 @@ h1.page-title {
   border: 0;
   color: var(--purple);
   font-size: 2rem;
-  padding: 0;
+  padding: 0 4px;
 }
 
 .social-box {
