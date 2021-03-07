@@ -1,0 +1,49 @@
+<div class="publishers-page">
+  <h1 class="page-title">Nos associations</h1>
+
+  <div class="publisher-list">
+    {% for publisher in publishers %}
+      <article class="publisher-in-list">
+        {% if publisher.hasLogo %}
+          <div class="publisher-logo">
+            <a href="{{ path('publisher_show', { slug: publisher.url }) }}">
+              <img
+                src="{{ publisher.logo.url }}"
+                alt="{{ publisher.name }}"
+                class="publisher-logo-image"
+              />
+            </a>
+          </div>
+        {% else %}
+          <div class="publisher-logo-missing"></div>
+        {% endif %}
+
+        <h1 class="publisher-name">
+          <a href="{{ path('publisher_show', { slug: publisher.url }) }}">
+            {{ publisher.name }}
+          </a>
+        </h1>
+
+        <p class="publisher-books-count">
+          {{ publisher.countArticles }}
+          {{ 'livre'|pluralize(publisher.countArticles) }}
+        </p>
+
+        {% if publisher.has('desc') %}
+          <div class="publisher-desc">
+            {{ publisher.desc|raw }}
+          </div>
+        {% endif %}
+
+        <a
+          href="{{ path('publisher_show', { slug: publisher.url }) }}"
+          class="btn btn-primary link-button"
+        >
+          Afficher les livres
+        </a>
+      </article>
+    {% endfor %}
+  </div>
+
+  {% include 'AppBundle:Publisher:_pagination.html.twig' %}
+</div>

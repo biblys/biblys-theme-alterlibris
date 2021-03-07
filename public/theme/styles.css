@@ -573,6 +573,67 @@ div.biblys-carousel .swiper-button-prev {
   margin-bottom: 12.5px;
 }
 
+/* 1.9 Publishers (associations) page */
+
+.publisher-list .publisher-in-list {
+  border-bottom: 1px solid var(--purple);
+  box-sizing: border-box;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 15px 0 40px;
+  text-align: center;
+  width: 320px;
+}
+
+.publisher-list .publisher-logo {
+  align-items: center;
+  display: flex;
+  height: 315px;
+  justify-content: center;
+  width: 315px;
+}
+
+.publisher-list .publisher-logo-missing {
+  height: 315px;
+  width: 315px;
+}
+
+.publisher-list .publisher-logo-image {
+  display: block;
+  margin: auto;
+  max-height: 315px;
+  max-width: 315px;
+}
+
+.publisher-list .publisher-name {
+  font-weight: var(--medium);
+  font-size: 2.8rem;
+  line-height: 3rem;
+  margin-top: 20px;
+  padding: 0 30px;
+}
+
+.publisher-list .publisher-books-count {
+  color: var(--red);
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.publisher-list .publisher-desc {
+  color: var(--purple);
+  font-family: var(--sans-serif);
+  margin: 25px 0;
+}
+
+.publisher-list .link-button {
+  background-color: var(--purple);
+  border-radius: 0;
+  font-size: 2.4rem;
+  font-weight: var(--semi-bold);
+}
+
 /** 2. TABLET **/
 
 @media (min-width: 768px) {
@@ -755,6 +816,19 @@ div.biblys-carousel .swiper-button-prev {
   .article-page .article-details {
     margin-left: 30px;
     width: 50%;
+  }
+
+  /* 2.9 Publishers (associations) page */
+
+  .publisher-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .publisher-list .publisher-in-list {
+    padding: 15px;
   }
 }
 
