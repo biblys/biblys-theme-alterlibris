@@ -380,6 +380,7 @@ div.biblys-carousel .swiper-button-prev {
   padding: 0 30px;
 }
 
+.pagination,
 .articles-pagination {
   align-items: center;
   display: flex;
@@ -387,16 +388,19 @@ div.biblys-carousel .swiper-button-prev {
   margin: 75px 25px;
 }
 
+.pagination .pagination-page,
 .articles-pagination .pagination-page {
   font-size: 2.5rem;
   margin: 0 0.75rem;
 }
 
+.pagination .pagination-page-current,
 .articles-pagination .pagination-page-current {
   color: var(--red);
   font-weight: var(--medium);
 }
 
+.pagination .pagination-button,
 .articles-pagination .pagination-button {
   background: var(--purple);
   border: 0;
@@ -406,14 +410,17 @@ div.biblys-carousel .swiper-button-prev {
   margin: 0 1rem;
 }
 
+.pagination .pagination-button .icon,
 .articles-pagination .pagination-button .icon {
   display: none;
 }
 
+.pagination .button-prev:before,
 .articles-pagination .button-prev:before {
   content: '⭠';
 }
 
+.pagination .button-next:before,
 .articles-pagination .button-next:before {
   content: '⭢';
 }
