@@ -768,6 +768,10 @@ div.biblys-carousel .swiper-button-prev {
     justify-content: space-evenly;
   }
 
+  .home-heading {
+    width: 290px;
+  }
+
   /* 2.6 Tablet Article List */
 
   .article-list {
