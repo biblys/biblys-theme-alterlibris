@@ -70,6 +70,17 @@
           {% endfor %}
         </dd>
 
+        {% if article.hasOtherContributors() %}
+          {% for people in article.getOtherContributors %}
+            <dt class="article-author-contributors">{{ people.job_name }}</dt>
+            <dd>
+              <a href="{{ path('people_show', { slug: people.url }) }}">
+                {{ people.name }}
+              </a>
+            </dd>
+          {% endfor %}
+        {% endif %}
+
         {% if article.has('pubdate') %}
           <dt class="article-publication-year">Année de parution</dt>
           <dd>
