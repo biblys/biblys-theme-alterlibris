@@ -88,12 +88,14 @@
           </dd>
         {% endif %}
 
-        <dt class="article-tags">Thèmes</dt>
-        <dd>
-          {% for tag in article.getTags() %}
-            <a href="/tag/{{ tag.url }}">{{ tag.name }}</a>{% if not loop.last %},{% endif %}
-          {% endfor %}
-        </dd>
+        {% if article.tags %}
+          <dt class="article-tags">Thèmes</dt>
+          <dd>
+            {% for tag in article.tags %}
+              <a href="/tag/{{ tag.url }}">{{ tag.name }}</a>{% if not loop.last %},{% endif %}
+            {% endfor %}
+          </dd>
+        {% endif %}
 
         {% if article.has("age_min") or article.has("age_max") %}
           <dt class="article-age-range">Âge du lectorat</dt>
