@@ -95,6 +95,13 @@
           {% endfor %}
         </dd>
 
+        {% if article.has("age_min") or article.has("age_max") %}
+          <dt class="article-age-range">Âge du lectorat</dt>
+          <dd>
+            {{ article.ageRange }}
+          </dd>
+        {% endif %}
+
         {% if article.has('lang_original') %}
           <dt class="article-language">Langue</dt>
           <dd>
