@@ -68,17 +68,17 @@
       <h1 class="section-title">Informations techniques</h1>
 
       <dl>
-        <dt class="article-authors">Auteurs</dt>
-        <dd>
-          {% for author in article.getAuthors() %}
-            <a href="{{ path('people_show', { slug: author.url }) }}">
-              {{ author.name }}</a>{% if not loop.last %},
-            {% endif %}
-          {% endfor %}
-        </dd>
+        {% for people in article.getAuthors() %}
+          <dt class="article-author-contributors">{{ people.job_name }}</dt>
+          <dd>
+            <a href="{{ path('people_show', { slug: people.url }) }}">
+              {{ people.name }}
+            </a>
+          </dd>
+        {% endfor %}
 
         {% if article.hasOtherContributors() %}
-          {% for people in article.getOtherContributors %}
+          {% for people in article.getOtherContributors() %}
             <dt class="article-author-contributors">{{ people.job_name }}</dt>
             <dd>
               <a href="{{ path('people_show', { slug: people.url }) }}">
