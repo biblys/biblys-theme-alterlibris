@@ -54,6 +54,13 @@
       <div class="article-summary">
         <h1 class="section-title">Résumé</h1>
         {{ article.summary|raw }}
+        
+        {% if article.has('bonus') %}
+          <div class="article-bonus">
+            <h1 class="section-title">Bonus</h1>
+            {{ article.bonus|raw }}
+          </div>
+        {% endif %}
       </div>
     {% endif %}
 
