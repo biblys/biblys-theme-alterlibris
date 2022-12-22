@@ -1,0 +1,32 @@
+{% extends "layout:base.html.twig" %}
+
+{% block title %}
+    {{ post.title }} | Blog
+{% endblock %}
+
+{% block main %}
+    <article id="post_{{ post.id }}" class="post">
+        <header class="post-header">
+            <h1 class="post-title">
+                <a href="{{ path('post_show', {'slug':post.url}) }}">{{ post.title }}</a>
+            </h1>
+            <p class="post-infos">Publié le
+                <time datetime="{{ post.date }}">{{ post.date|date('j f Y') }}</time>
+            </p>
+        </header>
+
+        {% include "AppBundle:Post:_post.html.twig" %}
+    </article>
+
+    {% if app.user.isAdmin %}
+        <div class="admin">
+            <p>Billet n°
+                {{ post.id }}</p>
+            <p>
+                <a href="/pages/adm_post?id={{ post.id }}">
+                    modifier
+                </a>
+            </p>
+        </div>
+    {% endif %}
+{% endblock %}
