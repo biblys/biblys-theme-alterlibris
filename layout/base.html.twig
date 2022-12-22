@@ -2,15 +2,24 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <title>{PAGE_TITLE}</title>
+    <title>
+      {% set titleBlock = block("title") %}
+      {% if titleBlock is not empty %}
+        {% block title %}{% endblock %} |
+      {% endif %}
+      {{ app.site.title }}
+    </title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    {CSS_CALLS} {OPENGRAPH} {MATOMO}
+
+    {# biblys assets #}
+    {% include "layout:_assets_css.html.twig" %}
+
     <link
       rel="stylesheet"
       type="text/css"
       media="screen"
-      href="/theme/styles.css?{ASSETS_VERSION}"
+      href="/theme/styles.css?{{ app.site.getOpt('assets_version') }}"
     />
 
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/theme/favicon/apple-touch-icon-57x57.png" />
@@ -33,6 +42,22 @@
     <meta name="msapplication-square150x150logo" content="/theme/favicon/mstile-150x150.png" />
     <meta name="msapplication-wide310x150logo" content="/theme/favicon/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/theme/favicon/mstile-310x310.png" />
+
+    <!-- Matomo -->
+    <script type="text/javascript">
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="https://analytics.biblys.cloud/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '14']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <!-- End Matomo Code -->
   </head>
   <body>
     <div id="fb-root"></div>
@@ -41,11 +66,11 @@
     <div class="wrapper">
       <header class="site-header noprint">
         <h1 class="site-title">
-          <a href="/">{SITE_TITLE}</a>
+          <a href="/">{{ app.site.title }}</a>
         </h1>
         <div class="site-logo">
           <a href="/">
-            <img src="/theme/logo.png" alt="{SITE_TITLE}" class="logo" />
+            <img src="/theme/logo.png" alt="{{ app.site.title }}" class="logo" />
           </a>
         </div>
         <div class="site-catchline">
@@ -58,7 +83,6 @@
               class="search-field"
               name="q"
               id="search-field"
-              value="{SEARCH_TERMS}"
               placeholder="Auteur, titre, référence…"
             />
             <button class="btn btn-default btn-sm search-button" type="submit">
@@ -103,7 +127,7 @@
           </div>
 
           <div class="cart-box">
-            <span id="myCart">{cart_oneline}</span>
+            <span id="myCart">{{ cart_status()|raw }}</span>
           </div>
         </div>
         <!-- /header-bar -->
@@ -172,7 +196,7 @@
       </nav>
 
       <main>
-        <div class="content">{PAGE_CONTENT}</div>
+        <div class="content">{% block main %}{% endblock %}</div>
       </main>
 
       <footer class="site-footer noprint">
@@ -270,6 +294,7 @@
       </footer>
     </div>
 
-    {AXYS_MENU} {JS_CALLS}
+    {{ app.axysMenu|raw }}
+    {% include "layout:_assets_js.html.twig" %}
     </body>
 </html>
