@@ -255,6 +255,10 @@ h1.page-title {
   text-align: center;
 }
 
+.site-footer .footer-picto {
+  max-width: 100%;
+}
+
 /* 1.5 Mobile Home page */
 
 div.biblys-carousel.swiper-container {
