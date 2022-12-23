@@ -1,84 +1,81 @@
-<article class="article-page">
-  <p class="article-breadcrumbs">
-    <a href="/">Accueil</a>
-    →
-    {% for rayon in article.rayons|filter(rayon => rayon.id != 242) %}
-      <a href="{{ path('rayon_show', { url: rayon.url }) }}">{{ rayon.name }}</a>{% if not loop.last %}, {% endif %}
-    {% endfor %}
-  </p>
+{% extends "layout:base.html.twig" %}
 
-  <header class="article-header">
-    <div class="article-cover">
-      {% if article.hasCover() %}
-        {{ article.getCoverTag({ class:"article-cover-image", size:"w500", rel: "lightbox" })|raw }}
-      {% endif %}
-    </div>
+{% block title %}
+  {{  article.title }}
+{% endblock %}
 
-    <div class="article-infos">
-      <h1 class="article-title page-title">{{ article.title }}</h1>
-      <p class="article-publisher">
-        Association : 
-        <a href="{{ path('publisher_show', { slug: article.publisher.url }) }}">{{ article.publisher.name }}</a>
-      </p>
-      {% if article.has('catchline') %}
-        <div class="article-catchline">
-          {{ article.catchline|raw }}
-          <a class="article-catchline-readmore" href="#article-content">Plus de détails →</a>
-        </div>
-      {% endif %}
-      {% if article.has('price') %}
-        <p class="article-price">{{ article.price|currency('EUR')|raw }}</p>
-      {% endif %}
-      {% set item = article.getCheapestAvailableItem() %}
-		  {% if item %}
-        <div class="article-button">
-          {{ article.cartButton('Ajouter au panier')|raw }}
-        </div>
-      {% endif %}
-      <p class="article-share">
-        Partager sur les réseaux sociaux :
-      </p>
-      {{ article.shareButtons({ 
-        buttons: { mail: false },
-        icons: {
-          facebook: 'facebook',
-          twitter: 'twitter',
-          pinterest: 'pinterest-p'
-        }
-      })|raw }}
-    </div>
-  </header>
+{% block main %}
+  <article class="article-page">
+    <p class="article-breadcrumbs">
+      <a href="/">Accueil</a>
+      →
+      {% for rayon in article.rayons|filter(rayon => rayon.id != 242) %}
+        <a href="{{ path('rayon_show', { url: rayon.url }) }}">{{ rayon.name }}</a>{% if not loop.last %}, {% endif %}
+      {% endfor %}
+    </p>
 
-  <section id="article-content" class="article-content">
-    {% if article.has('summary') %}
-      <div class="article-summary">
-        <h1 class="section-title">Résumé</h1>
-        {{ article.summary|raw }}
-        
-        {% if article.has('bonus') %}
-          <div class="article-bonus">
-            <h1 class="section-title">Bonus</h1>
-            {{ article.bonus|raw }}
-          </div>
+    <header class="article-header">
+      <div class="article-cover">
+        {% if article.hasCover() %}
+          {{ article.getCoverTag({ class:"article-cover-image", size:"w500", rel: "lightbox" })|raw }}
         {% endif %}
       </div>
-    {% endif %}
 
-    <div class="article-details">
-      <h1 class="section-title">Informations techniques</h1>
+      <div class="article-infos">
+        <h1 class="article-title page-title">{{ article.title }}</h1>
+        <p class="article-publisher">
+          Association :
+          <a href="{{ path('publisher_show', { slug: article.publisher.url }) }}">{{ article.publisher.name }}</a>
+        </p>
+        {% if article.has('catchline') %}
+          <div class="article-catchline">
+            {{ article.catchline|raw }}
+            <a class="article-catchline-readmore" href="#article-content">Plus de détails →</a>
+          </div>
+        {% endif %}
+        {% if article.has('price') %}
+          <p class="article-price">{{ article.price|currency('EUR')|raw }}</p>
+        {% endif %}
+        {% set item = article.getCheapestAvailableItem() %}
+        {% if item %}
+          <div class="article-button">
+            {{ article.cartButton('Ajouter au panier')|raw }}
+          </div>
+        {% endif %}
+        <p class="article-share">
+          Partager sur les réseaux sociaux :
+        </p>
+        {{ article.shareButtons({
+          buttons: { mail: false },
+          icons: {
+            facebook: 'facebook',
+            twitter: 'twitter',
+            pinterest: 'pinterest-p'
+          }
+        })|raw }}
+      </div>
+    </header>
 
-      <dl>
-        {% for people in article.getAuthors() %}
-          <dt class="article-author-contributors">{{ people.job_name }}</dt>
-          <dd>
-            <a href="{{ path('people_show', { slug: people.url }) }}">
-              {{ people.name }}
-            </a>
-          </dd>
-        {% endfor %}
+    <section id="article-content" class="article-content">
+      {% if article.has('summary') %}
+        <div class="article-summary">
+          <h1 class="section-title">Résumé</h1>
+          {{ article.summary|raw }}
 
-        {% if article.hasOtherContributors() %}
-          {% for people in article.getOtherContributors() %}
+          {% if article.has('bonus') %}
+            <div class="article-bonus">
+              <h1 class="section-title">Bonus</h1>
+              {{ article.bonus|raw }}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      <div class="article-details">
+        <h1 class="section-title">Informations techniques</h1>
+
+        <dl>
+          {% for people in article.getAuthors() %}
             <dt class="article-author-contributors">{{ people.job_name }}</dt>
             <dd>
               <a href="{{ path('people_show', { slug: people.url }) }}">
@@ -86,62 +83,73 @@
               </a>
             </dd>
           {% endfor %}
-        {% endif %}
 
-        {% if article.has('pubdate') %}
-          <dt class="article-publication-year">Année de parution</dt>
-          <dd>
-            {{ article.pubdate|date('Y') }}
-          </dd>
-        {% endif %}
-
-        {% if article.tags %}
-          <dt class="article-tags">Thèmes</dt>
-          <dd>
-            {% for tag in article.tags %}
-              <a href="/tag/{{ tag.url }}">{{ tag.name }}</a>{% if not loop.last %},{% endif %}
+          {% if article.hasOtherContributors() %}
+            {% for people in article.getOtherContributors() %}
+              <dt class="article-author-contributors">{{ people.job_name }}</dt>
+              <dd>
+                <a href="{{ path('people_show', { slug: people.url }) }}">
+                  {{ people.name }}
+                </a>
+              </dd>
             {% endfor %}
-          </dd>
-        {% endif %}
+          {% endif %}
 
-        {% if article.has("age_min") or article.has("age_max") %}
-          <dt class="article-age-range">Âge du lectorat</dt>
-          <dd>
-            {{ article.ageRange }}
-          </dd>
-        {% endif %}
+          {% if article.has('pubdate') %}
+            <dt class="article-publication-year">Année de parution</dt>
+            <dd>
+              {{ article.pubdate|date('Y') }}
+            </dd>
+          {% endif %}
 
-        {% if article.has('lang_original') %}
-          <dt class="article-language">Langue</dt>
-          <dd>
-            {{ article.lang_original }}
-          </dd>
-        {% endif %}
+          {% if article.tags %}
+            <dt class="article-tags">Thèmes</dt>
+            <dd>
+              {% for tag in article.tags %}
+                <a href="/tag/{{ tag.url }}">{{ tag.name }}</a>{% if not loop.last %},{% endif %}
+              {% endfor %}
+            </dd>
+          {% endif %}
 
-        {% if article.has('pages') %}
-          <dt class="article-pages">Pages</dt>
-          <dd>
-            {{ article.pages }} pages
-          </dd>
-        {% endif %}
+          {% if article.has("age_min") or article.has("age_max") %}
+            <dt class="article-age-range">Âge du lectorat</dt>
+            <dd>
+              {{ article.ageRange }}
+            </dd>
+          {% endif %}
 
-        {% if article.has('format') %}
-          <dt class="article-format">Dimensions</dt>
-          <dd>
-            {{ article.format }}
-          </dd>
-        {% endif %}
+          {% if article.has('lang_original') %}
+            <dt class="article-language">Langue</dt>
+            <dd>
+              {{ article.lang_original }}
+            </dd>
+          {% endif %}
 
-        {% if article.has('ean') %}
-          <dt class="article-ISBN">ISBN</dt>
-          <dd>
-            {{ article.isbn }}
-          </dd>
-        {% endif %}
-      </dl>
-    </div>
-  </section>
+          {% if article.has('pages') %}
+            <dt class="article-pages">Pages</dt>
+            <dd>
+              {{ article.pages }} pages
+            </dd>
+          {% endif %}
 
-</article>
+          {% if article.has('format') %}
+            <dt class="article-format">Dimensions</dt>
+            <dd>
+              {{ article.format }}
+            </dd>
+          {% endif %}
 
-{% include 'AppBundle:Article:_admin_options.html.twig' %}
+          {% if article.has('ean') %}
+            <dt class="article-ISBN">ISBN</dt>
+            <dd>
+              {{ article.isbn }}
+            </dd>
+          {% endif %}
+        </dl>
+      </div>
+    </section>
+
+  </article>
+
+  {% include 'AppBundle:Article:_admin_options.html.twig' %}
+{% endblock %}

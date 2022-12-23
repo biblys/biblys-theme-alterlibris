@@ -1,102 +1,106 @@
-{#
-  CAROUSEL (STATIQUE)
-  Pour changer le contenu du carousel,
-  modifier le code ci-dessous
-#}
+{% extends "layout:base.html.twig" %}
 
-<div class="biblys-carousel swiper-container" data-autoplay-delay="4000">
-  <div
-    class="swiper-wrapper">
+{% block main %}
+  {#
+    CAROUSEL (STATIQUE)
+    Pour changer le contenu du carousel,
+    modifier le code ci-dessous
+  #}
 
-    {# Bannière 1 #}
+  <div class="biblys-carousel swiper-container" data-autoplay-delay="4000">
+    <div
+      class="swiper-wrapper">
 
-    <div class="swiper-slide">
-      <a href="https://www.lowcarbonfrance.org/marche-de-noel-eco-village-feministe/" target="_blank" rel="noopener noreferrer">
-        <img class="carousel-image" src="https://alterlibris.fr/media/carousel/carrousel-02.jpg" alt="Bannière 1"/>
-      </a>
+      {# Bannière 1 #}
+
+      <div class="swiper-slide">
+        <a href="https://www.lowcarbonfrance.org/marche-de-noel-eco-village-feministe/" target="_blank" rel="noopener noreferrer">
+          <img class="carousel-image" src="https://alterlibris.fr/media/carousel/carrousel-02.jpg" alt="Bannière 1"/>
+        </a>
+      </div>
+
+      {# Bannière 2 #}
+
+      <div class="swiper-slide">
+        <a href="https://alterlibris.fr/rayon/nouveautes" target="_blank" rel="noopener noreferrer">
+          <img class="carousel-image" src="https://alterlibris.fr/media/carousel/carrousel-03.jpg" alt="Bannière 2"/>
+        </a>
+      </div>
+
+      {# Bannière 3 #}
+
+      <div class="swiper-slide">
+        <a href="https://www.facebook.com/AlterLibris" target="_blank" rel="noopener noreferrer">
+          <img class="carousel-image" src="https://alterlibris.fr/media/carousel/carrousel-01.jpg" alt="Bannière 3"/>
+        </a>
+      </div>
     </div>
 
-    {# Bannière 2 #}
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
 
-    <div class="swiper-slide">
-      <a href="https://alterlibris.fr/rayon/nouveautes" target="_blank" rel="noopener noreferrer">
-        <img class="carousel-image" src="https://alterlibris.fr/media/carousel/carrousel-03.jpg" alt="Bannière 2"/>
-      </a>
-    </div>
-
-    {# Bannière 3 #}
-
-    <div class="swiper-slide">
-      <a href="https://www.facebook.com/AlterLibris" target="_blank" rel="noopener noreferrer">
-        <img class="carousel-image" src="https://alterlibris.fr/media/carousel/carrousel-01.jpg" alt="Bannière 3"/>
-      </a>
-    </div>
+    <div class="swiper-pagination"></div>
   </div>
 
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
+  <div class="home-cols">
 
-  <div class="swiper-pagination"></div>
-</div>
+    <div class="home-left-col">
 
-<div class="home-cols">
+      {#
+        BLOC NOUVEAUTÉS (DYNAMIQUE)
+        Ce bloc affiche automatiquement les livres du rayon "Page d'accueil"
+      #}
 
-  <div class="home-left-col">
+      <div class="home-articles">
+        <header class="header">
+          <h1 class="home-section-title home-articles-title">Nouveautés</h1>
+        </header>
+        {% include 'AppBundle:Article:_list.html.twig' %}
+      </div>
 
-    {#
-      BLOC NOUVEAUTÉS (DYNAMIQUE)
-      Ce bloc affiche automatiquement les livres du rayon "Page d'accueil"
-    #}
-
-    <div class="home-articles">
-      <header class="header">
-        <h1 class="home-section-title home-articles-title">Nouveautés</h1>
-      </header>
-      {% include 'AppBundle:Article:_list.html.twig' %}
+      <div>
+        <h1 class="home-section-title">L'actu des assos</h1>
+          <a href="https://alterlibris.fr/a/collectif/j-etais-la" target="_blank" rel="noopener noreferrer">
+            <img src="/media/rubriques/banniere-1000px-03-facescacheesj-etaisla-alterlibris.jpg" class="home-heading-image" alt="Rubrique 3" />
+          </a>
+      </div>
     </div>
 
-    <div>
-      <h1 class="home-section-title">L'actu des assos</h1>
-        <a href="https://alterlibris.fr/a/collectif/j-etais-la" target="_blank" rel="noopener noreferrer">
-          <img src="/media/rubriques/banniere-1000px-03-facescacheesj-etaisla-alterlibris.jpg" class="home-heading-image" alt="Rubrique 3" />
-        </a>
-    </div>
-  </div>
+    <div class="home-right-col">
+      <div class="home-headings-section">
+        <article class="home-heading">
+          <h1 class="home-section-title">Actualités</h1>
+          <a href="https://editionsdaronnes.fr/" target="_blank" rel="noopener noreferrer">
+              <img src="/media/rubriques/exemple-nouveau-partenaire.jpg" class="home-heading-image" alt="Actualités" />
+          </a>
+        </article>
 
-  <div class="home-right-col">
-    <div class="home-headings-section">
-      <article class="home-heading">
-        <h1 class="home-section-title">Actualités</h1>
-        <a href="https://editionsdaronnes.fr/" target="_blank" rel="noopener noreferrer">
-            <img src="/media/rubriques/exemple-nouveau-partenaire.jpg" class="home-heading-image" alt="Actualités" />
-        </a>
-      </article>
+        <article class="home-heading">
+          <h1 class="home-section-title">Coups de cœur</h1>
+          <a href="/blog/tirons-la-langue-par-lysiane">
+            <img src="/media/rubriques/bloc-site-290px-02-coupdecoeur-tironslalangue.jpg" class="home-heading-image" alt="Rubrique 2" />
+          </a>
+        </article>
 
-      <article class="home-heading">
-        <h1 class="home-section-title">Coups de cœur</h1>
-        <a href="/blog/tirons-la-langue-par-lysiane">
-          <img src="/media/rubriques/bloc-site-290px-02-coupdecoeur-tironslalangue.jpg" class="home-heading-image" alt="Rubrique 2" />
-        </a>
-      </article>
+        <article class="home-heading">
 
-      <article class="home-heading">
-
-      <h1 class="home-section-title">Suivez-nous sur Facebook</h1>
-      <div
-        class="fb-page"
-        data-href="https://www.facebook.com/AlterLibris"
-        data-tabs="timeline"
-        data-width="290"
-        data-height=""
-        data-small-header="false"
-        data-adapt-container-width="true"
-        data-hide-cover="false"
-        data-show-facepile="true"
-      >
-        <blockquote cite="https://www.facebook.com/AlterLibris/" class="fb-xfbml-parse-ignore">
-          <a href="https://www.facebook.com/AlterLibris/">AlterLibris, tous les livres des assos</a>
-        </blockquote>
+        <h1 class="home-section-title">Suivez-nous sur Facebook</h1>
+        <div
+          class="fb-page"
+          data-href="https://www.facebook.com/AlterLibris"
+          data-tabs="timeline"
+          data-width="290"
+          data-height=""
+          data-small-header="false"
+          data-adapt-container-width="true"
+          data-hide-cover="false"
+          data-show-facepile="true"
+        >
+          <blockquote cite="https://www.facebook.com/AlterLibris/" class="fb-xfbml-parse-ignore">
+            <a href="https://www.facebook.com/AlterLibris/">AlterLibris, tous les livres des assos</a>
+          </blockquote>
+        </div>
       </div>
     </div>
   </div>
-</div>
+{% endblock %}
