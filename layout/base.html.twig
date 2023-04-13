@@ -46,9 +46,10 @@
     {% include "layout:_analytics.html.twig" %}
   </head>
   <body>
+    {% include "layout:_overall_menu.html.twig" %}
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v9.0" nonce="WsYAyr5y"></script>
-  
+
     <div class="wrapper">
       <header class="site-header noprint">
         <h1 class="site-title">
@@ -193,7 +194,7 @@
             </div>
             <h1 class="col-title">Pour qui ?</h1>
             <p class="col-text">
-              Alterlibris est une librairie généraliste pour tous les lecteurs et lectrices curieux•ses de découvrir des livres et des associations engagées. 
+              Alterlibris est une librairie généraliste pour tous les lecteurs et lectrices curieux•ses de découvrir des livres et des associations engagées.
             </p>
           </div>
           <div class="footer-col">
@@ -286,7 +287,6 @@
       </footer>
     </div>
 
-    {{ app.axysMenu|raw }}
     {% include "layout:_assets_js.html.twig" %}
     </body>
 </html>
