@@ -7,7 +7,7 @@
       {% if titleBlock is not empty %}
         {% block title %}{% endblock %} |
       {% endif %}
-      {{ app.site.title }}
+      {{ app.currentSite.title }}
     </title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +19,7 @@
       rel="stylesheet"
       type="text/css"
       media="screen"
-      href="/theme/styles.css?{{ app.site.getOpt('assets_version') }}"
+      href="/theme/styles.css?{{ app.currentSite.getOption('assets_version') }}"
     />
 
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/theme/favicon/apple-touch-icon-57x57.png" />
@@ -54,11 +54,11 @@
     <div class="wrapper">
       <header class="site-header noprint">
         <h1 class="site-title">
-          <a href="/">{{ app.site.title }}</a>
+          <a href="/">{{ app.currentSite.title }}</a>
         </h1>
         <div class="site-logo">
           <a href="/">
-            <img src="/theme/logo.png" alt="{{ app.site.title }}" class="logo" />
+            <img src="/theme/logo.png" alt="{{ app.currentSite.title }}" class="logo" />
           </a>
         </div>
         <div class="site-catchline">
