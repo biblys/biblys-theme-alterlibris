@@ -14,12 +14,20 @@
       {# Bannière 1 #}
 
       <div class="swiper-slide">
-        <a href="https://www.coleresdupresent.com" target="_blank" rel="noopener noreferrer">
-          <img class="carousel-image" src="https://alterlibris.fr/media/carousel/carousel-05-v1.jpg" alt="Bannière 1"/>
+        <a href="https://www.coleresdupresent.com/article/23e-salon-du-livre-dexpression-populaire-et-de-critique-sociale/" target="_blank" rel="noopener noreferrer">
+          <img class="carousel-image" src="https://alterlibris.fr/media/carousel/banniere-1000px-02-arras-alterlibris.jpg" alt="Bannière 1"/>
+        </a>
+      </div>
+      
+         {# Bannière 2 #}
+
+      <div class="swiper-slide">
+        <a href="https://alterlibris.fr/contact/" target="_blank" rel="noopener noreferrer">
+          <img class="carousel-image" src="https://alterlibris.fr/media/carousel/benevoles-carrousel.jpg" alt="Bannière 2"/>
         </a>
       </div>
 
-      {# Bannière 2 #}
+         {# Bannière 3 #}
 
       <div class="swiper-slide">
         <a href="https://alterlibris.fr/blog/repenser-notre-rapport-au-travail-et-a-l-argent" target="_blank" rel="noopener noreferrer">
@@ -45,19 +53,12 @@
 
       <div class="home-articles">
         <header class="header">
-          <h1 class="home-section-title home-articles-title">Nouveautés</h1>
+          <h1 class="home-section-title home-articles-title">Anti Fascisme</h1>
         </header>
         {% include 'AppBundle:Article:_list.html.twig' %}
       </div>
-
-      <div>
-        <h1 class="home-section-title">L'actu des assos</h1>
-          <a href="https://alterlibris.fr/a/collectif/j-etais-la" target="_blank" rel="noopener noreferrer">
-            <img src="/media/rubriques/banniere-1000px-03-facescacheesj-etaisla-alterlibris.jpg" class="home-heading-image" alt="Rubrique 3" />
-          </a>
-      </div>
+      
     </div>
-
     <div class="home-right-col">
       <div class="home-headings-section">
         <article class="home-heading">
@@ -95,4 +96,10 @@
       </div>
     </div>
   </div>
+  <article class="home-heading" style="width: unset !important;">
+    <h1 class="home-section-title">L'actu des assos</h1>
+    <a href="https://alterlibris.fr/a/collectif/j-etais-la" target="_blank" rel="noopener noreferrer">
+      <img src="/media/rubriques/banniere-1000px-03-facescacheesj-etaisla-alterlibris.jpg" class="home-heading-image" alt="Rubrique 3" />
+    </a>
+  </article>
 {% endblock %}
