@@ -645,6 +645,22 @@ div.biblys-carousel .swiper-button-prev {
   font-weight: var(--semi-bold);
 }
 
+.post-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0 0 40px 0;
+}
+
+.post-image {
+	margin-bottom: 16px;
+}
+
+.post-text {
+    margin: 0 24px;
+    text-align: justify;
+}
+
 /** 2. TABLET **/
 
 @media (min-width: 768px) {
@@ -1006,5 +1022,9 @@ div.biblys-carousel .swiper-button-prev {
 
   .article-page .article-details dd {
     margin-bottom: 25px;
+  }
+  .post-content {
+    flex-direction: row;
+	align-items: normal;
   }
 }
