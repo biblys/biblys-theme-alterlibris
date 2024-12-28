@@ -324,7 +324,7 @@ div.biblys-carousel .swiper-button-prev {
   width: 320px;
 }
 
-.article-list .article-cover {
+.article-list .article-cover a {
   align-items: center;
   display: flex;
   height: 315px;
@@ -335,8 +335,10 @@ div.biblys-carousel .swiper-button-prev {
 .article-list .article-cover-image {
   display: block;
   margin: auto;
-  max-height: 315px;
-  max-width: 315px;
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+  height: auto;
 }
 
 .article-list .article-title {
@@ -468,6 +470,8 @@ div.biblys-carousel .swiper-button-prev {
 .article-page .article-cover-image {
   border: 1px solid lightgray;
   display: block;
+  height: auto;
+  width: auto;
   margin: auto;
   max-width: 100%;
   padding: 25px 12.5px;
