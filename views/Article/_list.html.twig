@@ -2,14 +2,13 @@
 	{% for article in articles %}
 		<div class="article-in-list">
 			<div class="article-cover">
-				{% if article.hasCover() %}
-					{{
-            article.getCoverTag({
-              size: "w600",
-              link: path("article_show", { slug: article.url }),
-							class: "article-cover-image"
-            }) | raw
-          }}
+				{% if article.model|hasImage %}
+					{% include "AppBundle:Article:_cover.html.twig" with {
+						article: article.model,
+						class: "article-cover-image",
+						link: path("article_show", { slug: article.url }),
+						width: 600
+					} %}
 				{% else %}
 					<a href="{{ path('article_show', { slug: article.url }) }}">
 						<div aria-label="{{ article.title }}" class="article-missing-cover"></div>

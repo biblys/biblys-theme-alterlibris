@@ -16,9 +16,15 @@
 
     <header class="article-header">
       <div class="article-cover">
-        {% if article.hasCover() %}
-          {{ article.getCoverTag({ class:"article-cover-image", size:"w500", rel: "lightbox" })|raw }}
+        {% if article.model|hasImage %}
+          {% include "AppBundle:Article:_cover.html.twig" with {
+            article: article.model,
+            class: "article-cover-image",
+            width: 500,
+            rel: "lightbox"
+          } %}
         {% endif %}
+
       </div>
 
       <div class="article-infos">
