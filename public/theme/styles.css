@@ -19,13 +19,8 @@
   --semi-bold: 600;
 }
 
-html {
-  font-size: 62.5%; /* 1rem = 10 pixels */
-}
-
 body {
-  font-family: var(--sans-serif);
-  font-size: 1.4rem;
+  font-family: var(--sans-serif), sans-serif;
 }
 
 a {
@@ -86,11 +81,11 @@ h1.page-title {
 }
 
 .social-button .fa {
-  font-size: 2rem;
+  font-size: 1.250rem;
 }
 
 .social-button .fa-envelope {
-  font-size: 1.8rem;
+  font-size: 1.125rem;
 }
 
 .header-bar {
@@ -116,7 +111,7 @@ h1.page-title {
   border-bottom: 1px solid var(--purple);
   color: var(--purple);
   font-family: var(--serif);
-  font-size: 1.6rem;
+  font-size: 1.000rem;
   padding: 4px;
   margin-top: 0;
   outline-color: var(--purple);
@@ -130,13 +125,13 @@ h1.page-title {
 .search-box .search-button {
   border: 0;
   color: var(--purple);
-  font-size: 2rem;
+  font-size: 1.250rem;
   padding: 0 4px;
 }
 
 .social-box {
   display: flex;
-  font-size: 3rem;
+  font-size: 1.875rem;
 }
 
 .cart-box .btn {
@@ -152,7 +147,7 @@ h1.page-title {
 /* 1.3 Mobile Navbar */
 
 .navbar {
-  font-size: 2rem;
+  font-size: 1.250rem;
   margin-bottom: 0;
 }
 
@@ -181,7 +176,7 @@ h1.page-title {
 .navbar .dropdown-menu > li > a {
   color: white;
   font-weight: var(--medium);
-  font-size: 1.8rem;
+  font-size: 1.125rem;
 }
 
 .navbar .dropdown-menu > li > a:hover {
@@ -226,12 +221,12 @@ h1.page-title {
 }
 
 .site-footer .col-title {
-  font-size: 2rem;
+  font-size: 1.250rem;
   color: var(--light-red);
 }
 
 .site-footer .footer-presentation .col-title {
-  font-size: 2.5rem;
+  font-size: 1.562rem;
   font-weight: var(--medium);
 }
 
@@ -241,8 +236,8 @@ h1.page-title {
 
 .site-footer .col-text {
   font-family: var(--serif);
-  font-size: 2rem;
-  line-height: 2rem;
+  font-size: 1.250rem;
+  line-height: 1.250rem;
   margin-bottom: 0;
   padding: 0 15px;
 }
@@ -343,20 +338,20 @@ div.biblys-carousel .swiper-button-prev {
 
 .article-list .article-title {
   font-weight: var(--medium);
-  font-size: 2.8rem;
-  line-height: 3rem;
+  font-size: 1.750rem;
+  line-height: 1.875rem;
   margin-top: 20px;
   padding: 0 30px;
 }
 
 .article-list .article-publisher {
-  font-size: 1.2rem;
+  font-size: 0.750rem;
 }
 
 .article-list .article-price {
   color: var(--purple);
   font-weight: var(--medium);
-  font-size: 2.4rem;
+  font-size: 1.500rem;
 }
 
 .article-list .article-publisher-link {
@@ -368,7 +363,7 @@ div.biblys-carousel .swiper-button-prev {
 .article-page .cart-button {
   background-color: var(--purple);
   border-radius: 0;
-  font-size: 2.4rem;
+  font-size: 1.500rem;
   font-weight: var(--semi-bold);
 }
 
@@ -396,8 +391,8 @@ div.biblys-carousel .swiper-button-prev {
 
 .pagination .pagination-page,
 .articles-pagination .pagination-page {
-  font-size: 2.5rem;
-  margin: 0 0.75rem;
+  font-size: 1.562rem;
+  margin: 0 0.469rem;
 }
 
 .pagination .pagination-page-current,
@@ -412,8 +407,8 @@ div.biblys-carousel .swiper-button-prev {
   border: 0;
   border-radius: 50%;
   color: white;
-  font-size: 2.5rem;
-  margin: 0 1rem;
+  font-size: 1.562rem;
+  margin: 0 0.625rem;
 }
 
 .pagination .pagination-button .icon,
@@ -447,7 +442,7 @@ div.biblys-carousel .swiper-button-prev {
 .rayon-description p {
   color: var(--red);
   font-family: var(--serif);
-  font-size: 1.8rem;
+  font-size: 1.125rem;
 }
 
 /* 1.8 Article Page */
@@ -460,7 +455,7 @@ div.biblys-carousel .swiper-button-prev {
 .article-page .article-breadcrumbs a {
   color: var(--red);
   font-family: var(--serif);
-  font-size: 1.3rem;
+  font-size: 0.812rem;
 }
 
 .article-page .article-header {
@@ -490,7 +485,7 @@ div.biblys-carousel .swiper-button-prev {
   border: 0;
   color: var(--purple);
   font-family: var(--sans-serif);
-  font-size: 4.2rem;
+  font-size: 2.625rem;
   font-weight: var(--semi-bold);
   margin: 0;
   padding: 0;
@@ -503,8 +498,8 @@ div.biblys-carousel .swiper-button-prev {
 }
 
 .article-page .article-catchline {
-  font-size: 1.8rem;
-  line-height: 2.7rem;
+  font-size: 1.125rem;
+  line-height: 1.688rem;
   margin-bottom: 23px;
 }
 
@@ -513,13 +508,13 @@ div.biblys-carousel .swiper-button-prev {
 }
 
 .article-page .article-catchline-readmore {
-  font-size: 1.2rem;
+  font-size: 0.750rem;
 }
 
 .article-page .article-price {
   color: var(--purple);
   font-family: var(--sans-serif);
-  font-size: 3rem;
+  font-size: 1.875rem;
   font-weight: var(--semi-bold);
 }
 
@@ -531,7 +526,7 @@ div.biblys-carousel .swiper-button-prev {
 }
 
 .article-page .article-share {
-  font-size: 1.6rem;
+  font-size: 1.000rem;
   margin-top: 20px;
 }
 
@@ -559,7 +554,7 @@ div.biblys-carousel .swiper-button-prev {
 .article-page .section-title {
   border-bottom: 1px solid var(--purple);
   color: var(--purple);
-  font-size: 3rem;
+  font-size: 1.875rem;
   font-weight: var(--semi-bold);
   margin-bottom: 15px;
   padding-bottom: 15px;
@@ -568,8 +563,8 @@ div.biblys-carousel .swiper-button-prev {
 .article-page .article-summary {
   color: var(--purple);
   font-family: var(--serif);
-  font-size: 1.8rem;
-  line-height: 2.7rem;
+  font-size: 1.125rem;
+  line-height: 1.688rem;
 }
 
 .article-page .article-details {
@@ -577,14 +572,14 @@ div.biblys-carousel .swiper-button-prev {
 }
 
 .article-page .article-details dt {
-  font-size: 2.2rem;
+  font-size: 1.375rem;
   font-weight: var(--medium);
 }
 
 .article-page .article-details dd {
   font-family: var(--serif);
-  font-size: 1.3rem;
-  line-height: 2.1rem;
+  font-size: 0.812rem;
+  line-height: 1.312rem;
   margin-bottom: 12.5px;
 }
 
@@ -622,8 +617,8 @@ div.biblys-carousel .swiper-button-prev {
 
 .publisher-list .publisher-name {
   font-weight: var(--medium);
-  font-size: 2.8rem;
-  line-height: 3rem;
+  font-size: 1.750rem;
+  line-height: 1.875rem;
   margin-top: 20px;
   padding: 0 30px;
 }
@@ -631,7 +626,7 @@ div.biblys-carousel .swiper-button-prev {
 .publisher-list .publisher-books-count {
   color: var(--red);
   font-family: var(--serif);
-  font-size: 1.2rem;
+  font-size: 0.750rem;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -645,7 +640,7 @@ div.biblys-carousel .swiper-button-prev {
 .publisher-list .link-button {
   background-color: var(--purple);
   border-radius: 0;
-  font-size: 2.4rem;
+  font-size: 1.500rem;
   font-weight: var(--semi-bold);
 }
 
@@ -732,7 +727,7 @@ div.biblys-carousel .swiper-button-prev {
   /* 2.3 Tablet Navbar */
 
   .navbar {
-    font-size: 1.8rem;
+    font-size: 1.125rem;
   }
 
   .navbar .navbar-brand {
@@ -882,7 +877,7 @@ div.biblys-carousel .swiper-button-prev {
   }
 
   .navbar {
-    font-size: 2.25rem;
+    font-size: 1.406rem;
   }
 
   /* 3.4 Footer */

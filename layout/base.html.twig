@@ -1,295 +1,298 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <title>
-      {% set titleBlock = block("title") %}
-      {% if titleBlock is not empty %}
-        {% block title %}{% endblock %} |
-      {% endif %}
-      {{ app.currentSite.title }}
-    </title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+  <meta charset="utf-8" />
+  <title>
+    {% set titleBlock = block("title") %}
+    {% if titleBlock is not empty %}
+      {% block title %}{% endblock %} |
+    {% endif %}
+    {{ app.currentSite.title }}
+  </title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    {# biblys assets #}
-    {% include "layout:_assets_css.html.twig" %}
+  {# biblys assets #}
+  {% include "layout:_assets_css.html.twig" %}
 
-    <link
-      rel="stylesheet"
-      type="text/css"
-      media="screen"
-      href="/theme/styles.css?{{ app.currentSite.getOption('assets_version') }}"
-    />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    media="screen"
+    href="/theme/styles.css?{{ app.currentSite.getOption('assets_version') }}"
+  />
 
-    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/theme/favicon/apple-touch-icon-57x57.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/theme/favicon/apple-touch-icon-114x114.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/theme/favicon/apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/theme/favicon/apple-touch-icon-144x144.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/theme/favicon/apple-touch-icon-60x60.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/theme/favicon/apple-touch-icon-120x120.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/theme/favicon/apple-touch-icon-76x76.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/theme/favicon/apple-touch-icon-152x152.png" />
-    <link rel="icon" type="image/png" href="/theme/favicon/favicon-196x196.png" sizes="196x196" />
-    <link rel="icon" type="image/png" href="/theme/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/png" href="/theme/favicon/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="/theme/favicon/favicon-16x16.png" sizes="16x16" />
-    <link rel="icon" type="image/png" href="/theme/favicon/favicon-128.png" sizes="128x128" />
-    <meta name="application-name" content="&nbsp;" />
-    <meta name="msapplication-TileColor" content="#FFFFFF" />
-    <meta name="msapplication-TileImage" content="/theme/favicon/mstile-144x144.png" />
-    <meta name="msapplication-square70x70logo" content="/theme/favicon/mstile-70x70.png" />
-    <meta name="msapplication-square150x150logo" content="/theme/favicon/mstile-150x150.png" />
-    <meta name="msapplication-wide310x150logo" content="/theme/favicon/mstile-310x150.png" />
-    <meta name="msapplication-square310x310logo" content="/theme/favicon/mstile-310x310.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/theme/favicon/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/theme/favicon/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/theme/favicon/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/theme/favicon/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/theme/favicon/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/theme/favicon/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/theme/favicon/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/theme/favicon/apple-touch-icon-152x152.png" />
+  <link rel="icon" type="image/png" href="/theme/favicon/favicon-196x196.png" sizes="196x196" />
+  <link rel="icon" type="image/png" href="/theme/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/png" href="/theme/favicon/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="/theme/favicon/favicon-16x16.png" sizes="16x16" />
+  <link rel="icon" type="image/png" href="/theme/favicon/favicon-128.png" sizes="128x128" />
+  <meta name="application-name" content="&nbsp;" />
+  <meta name="msapplication-TileColor" content="#FFFFFF" />
+  <meta name="msapplication-TileImage" content="/theme/favicon/mstile-144x144.png" />
+  <meta name="msapplication-square70x70logo" content="/theme/favicon/mstile-70x70.png" />
+  <meta name="msapplication-square150x150logo" content="/theme/favicon/mstile-150x150.png" />
+  <meta name="msapplication-wide310x150logo" content="/theme/favicon/mstile-310x150.png" />
+  <meta name="msapplication-square310x310logo" content="/theme/favicon/mstile-310x310.png" />
 
-    {{ app.metaTags|raw }}
+  {{ app.metaTags|raw }}
 
-    {% include "layout:_analytics.html.twig" %}
-  </head>
-  <body>
-    {% include "layout:_overall_menu.html.twig" %}
-    {% include "layout:_flash_messages.html.twig" %}
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v9.0" nonce="WsYAyr5y"></script>
+  {% include "layout:_analytics.html.twig" %}
+</head>
+<body>
+{% include "layout:_overall_menu.html.twig" %}
+{% include "layout:_flash_messages.html.twig" %}
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v9.0"
+        nonce="WsYAyr5y"></script>
 
-    <div class="wrapper">
-      <header class="site-header noprint">
-        <h1 class="site-title">
-          <a href="/">{{ app.currentSite.title }}</a>
-        </h1>
-        <div class="site-logo">
-          <a href="/">
-            <img src="/theme/logo.png" alt="{{ app.currentSite.title }}" class="logo" />
+<div class="wrapper">
+  <header class="site-header noprint">
+    <h1 class="site-title">
+      <a href="/">{{ app.currentSite.title }}</a>
+    </h1>
+    <div class="site-logo">
+      <a href="/">
+        <img src="/theme/logo.png" alt="{{ app.currentSite.title }}" class="logo" />
+      </a>
+    </div>
+    <div class="site-catchline">
+      Des livres et des assos !
+    </div>
+    <div class="header-bar" class="d-print-none">
+      <form class="search-box" action="/articles/search">
+        <input
+          type="text"
+          class="search-field"
+          name="q"
+          id="search-field"
+          placeholder="Auteur, titre, référence…"
+        />
+        <button class="btn btn-default btn-sm search-button" type="submit">
+          <i aria-label="Recherche" class="fa fa-search"></i>
+        </button>
+      </form>
+
+      <div class="social-box">
+        <a
+          class="social-button"
+          href="https://www.facebook.com/AlterLibris"
+          title="Nous suivre sur Facebook"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <span aria-label="Facebook" class="fa fa-facebook"></span>
+        </a>
+
+        <a
+          class="social-button"
+          href="https://twitter.com/AlterLibris"
+          title="Nous suivre sur Twitter"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <span aria-label="Twitter" class="fa fa-twitter"></span>
+        </a>
+
+        <a
+          class="social-button"
+          href="https://www.instagram.com/alterlibris/"
+          title="S'abonner sur Instagram"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <span aria-label="Instagram" class="fa fa-instagram"></span>
+        </a>
+
+        <a class="social-button" href="/contact/" title="Nous contacter">
+          <span aria-label="Nous contacter" class="fa fa-envelope"></span>
+        </a>
+      </div>
+
+      <div class="cart-box">
+        <span id="myCart">{{ cart_status()|raw }}</span>
+      </div>
+    </div>
+    <!-- /header-bar -->
+  </header>
+
+  <nav class="navbar navbar-expand-lg" role="navigation">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbar"
+      aria-controls="navbar"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      Menu
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbar">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/editeurs/">Nos associations</a>
+        </li>
+        <li class="nav-item separator">|</li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Livres
           </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/rayon/nouveautes">Nouveautés</a>
+            <a class="dropdown-item" href="/rayon/coups-de-coeur-des-benevoles">Coups de cœur des bénévoles</a>
+            <a class="dropdown-item" href="/rayon/essais">Essais</a>
+            <a class="dropdown-item" href="/rayon/feminisme">Féminisme</a>
+            <a class="dropdown-item" href="/rayon/ecologie">Écologie</a>
+            <a class="dropdown-item" href="/rayon/luttes">Luttes</a>
+            <a class="dropdown-item" href="/rayon/litterature">Littérature</a>
+            <a class="dropdown-item" href="/rayon/autobiographies-memoires-temoignages">(Auto)biographies,
+              mémoires...</a>
+            <a class="dropdown-item" href="/rayon/jeunesse">Jeunesse</a>
+            <a class="dropdown-item" href="/rayon/bandes-dessinees">BD</a>
+            <a class="dropdown-item" href="/rayon/beaux-livres">Beaux-livres</a>
+            <a class="dropdown-item" href="/rayon/vie-pratique">Vie pratique</a>
+            <a class="dropdown-item" href="/rayon/macle-alpha">MaClé Alpha</a>
+          </div>
+        </li>
+        <li class="nav-item separator">|</li>
+        <li class="nav-item">
+          <a class="nav-link" href="/rayon/livres-numeriques">Livres numériques</a>
+        </li>
+        <li class="nav-item separator">|</li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/nos-lectures/">L'avis des bénévoles</a>
+        </li>
+        <li class="nav-item separator">|</li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/notre-vie/">Actualités</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div class="content">{% block main %}{% endblock %}</div>
+  </main>
+
+  <footer class="site-footer noprint">
+    <div class="footer-row footer-presentation">
+      <div class="footer-col">
+        <div class="white-circle">
+          <img src="/theme/picto-pour-qui.png" class="footer-picto" alt="" role="presentation" />
         </div>
-        <div class="site-catchline">
-          Des livres et des assos !
+        <h1 class="col-title">Pour qui ?</h1>
+        <p class="col-text">
+          Alterlibris est une librairie généraliste pour tous les lecteurs et lectrices curieux•ses de découvrir des
+          livres et des associations engagées.
+        </p>
+      </div>
+      <div class="footer-col">
+        <div class="white-circle">
+          <img src="/theme/picto-pourquoi.png" class="footer-picto" alt="" role="presentation" />
         </div>
-        <div class="header-bar" class="hidden-print">
-          <form class="search-box" action="/articles/search">
-            <input
-              type="text"
-              class="search-field"
-              name="q"
-              id="search-field"
-              placeholder="Auteur, titre, référence…"
-            />
-            <button class="btn btn-default btn-sm search-button" type="submit">
-              <i aria-label="Recherche" class="fa fa-search"></i>
-            </button>
-          </form>
-
-          <div class="social-box">
-            <a
-              class="social-button"
-              href="https://www.facebook.com/AlterLibris"
-              title="Nous suivre sur Facebook"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              <span aria-label="Facebook" class="fa fa-facebook"></span>
-            </a>
-
-            <a
-              class="social-button"
-              href="https://twitter.com/AlterLibris"
-              title="Nous suivre sur Twitter"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              <span aria-label="Twitter" class="fa fa-twitter"></span>
-            </a>
-
-            <a
-              class="social-button"
-              href="https://www.instagram.com/alterlibris/"
-              title="S'abonner sur Instagram"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              <span aria-label="Instagram" class="fa fa-instagram"></span>
-            </a>
-
-            <a class="social-button" href="/contact/" title="Nous contacter">
-              <span aria-label="Nous contacter" class="fa fa-envelope"></span>
-            </a>
-          </div>
-
-          <div class="cart-box">
-            <span id="myCart">{{ cart_status()|raw }}</span>
-          </div>
+        <h1 class="col-title">Pourquoi ?</h1>
+        <p class="col-text">
+          Découvrez les publications des associations, des ouvrages et documents peu mis en avant en
+          librairie et sur internet. Accédez également à une bibliothèque de livres numériques gratuits, le tout
+          sans bouger de chez vous !
+        </p>
+      </div>
+      <div class="footer-col">
+        <div class="white-circle">
+          <img src="/theme/picto-une-question.png" class="footer-picto" alt="" role="presentation" />
         </div>
-        <!-- /header-bar -->
-      </header>
-
-      <nav class="navbar" role="navigation">
-        <div class="">
-          <div class="navbar-header">
-            <button
-              type="button"
-              class="navbar-toggle collapsed"
-              data-toggle="collapse"
-              data-target="#navbar"
-              aria-expanded="false"
-              aria-controls="navbar"
-            >
-              <span class="sr-only">Menu</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Accueil</a>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li>
-                <a href="/editeurs/">Nos associations</a>
-              </li>
-              <li class="separator">|</li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                  Livres <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a href="/rayon/nouveautes">Nouveautés</a></li>
-                  <li><a href="/rayon/coups-de-coeur-des-benevoles">Coups de cœur des bénévoles</a></li>
-                  <li><a href="/rayon/essais">Essais</a></li>
-                  <li><a href="/rayon/feminisme">Féminisme</a></li>
-                  <li><a href="/rayon/ecologie">Écologie</a></li>
-                  <li><a href="/rayon/luttes">Luttes</a></li>
-                  <li><a href="/rayon/litterature">Littérature</a></li>
-                  <li><a href="/rayon/autobiographies-memoires-temoignages">(Auto)biographies, mémoires...</a></li>
-                  <li><a href="/rayon/jeunesse">Jeunesse</a></li>
-                  <li><a href="/rayon/bandes-dessinees">BD</a></li>
-                  <li><a href="/rayon/beaux-livres">Beaux-livres</a></li>
-                  <li><a href="/rayon/vie-pratique">Vie pratique</a></li>
-                  <li><a href="/rayon/macle-alpha">MaClé Alpha</a></li>
-                </ul>
-              </li>
-              <li class="separator">|</li>
-              <li>
-                <a href="/rayon/livres-numeriques">Livres numériques</a>
-              </li>
-              <li class="separator">|</li>
-              <li>
-                <a href="/blog/nos-lectures/">L'avis des bénévoles</a>
-              </li>
-              <li class="separator">|</li>
-              <li>
-                <a href="/blog/notre-vie/">Actualités</a>
-              </li>
-            </ul>
-          </div>
-          <!--/.navbar-collapse -->
-        </div>
-      </nav>
-
-      <main>
-        <div class="content">{% block main %}{% endblock %}</div>
-      </main>
-
-      <footer class="site-footer noprint">
-        <div class="footer-row footer-presentation">
-          <div class="footer-col">
-            <div class="white-circle">
-              <img src="/theme/picto-pour-qui.png" class="footer-picto" alt="" role="presentation" />
-            </div>
-            <h1 class="col-title">Pour qui ?</h1>
-            <p class="col-text">
-              Alterlibris est une librairie généraliste pour tous les lecteurs et lectrices curieux•ses de découvrir des livres et des associations engagées.
-            </p>
-          </div>
-          <div class="footer-col">
-            <div class="white-circle">
-              <img src="/theme/picto-pourquoi.png" class="footer-picto" alt="" role="presentation" />
-            </div>
-            <h1 class="col-title">Pourquoi ?</h1>
-            <p class="col-text">
-              Découvrez les publications des associations, des ouvrages et documents peu mis en avant en
-              librairie et sur internet. Accédez également à une bibliothèque de livres numériques gratuits, le tout
-              sans bouger de chez vous !
-            </p>
-          </div>
-          <div class="footer-col">
-            <div class="white-circle">
-              <img src="/theme/picto-une-question.png" class="footer-picto" alt="" role="presentation" />
-            </div>
-            <h1 class="col-title">Une question ?</h1>
-            <p class="col-text">
-              Si vous ne trouvez pas la réponse à votre question dans la FAQ, ou si vous souhaitez
-              nous faire part de vos remarques (ou nous complimenter), n’hésitez pas à
-              <a href="/contact/">nous contacter</a>. Notre équipe de bénévoles se fera un plaisir
-              de vous répondre.
-            </p>
-          </div>
-        </div>
-
-        <div class="footer-row">
-          <div class="footer-col">
-            <h1 class="col-title">Rayons</h1>
-            <ul class="footer-list">
-              <li><a href="/rayon/nouveautes">Nouveautés</a></li>
-              <li><a href="/rayon/coups-de-coeur-des-benevoles">Coups de cœur des bénévoles</a></li>
-              <li><a href="/rayon/livres-numeriques">Livres numériques</a></li>
-              <li><a href="/rayon/essais">Essais</a></li>
-              <li><a href="/rayon/litterature">Littérature</a></li>
-             <li><a href="/rayon/romans">Romans</a></li>
-            <li><a href="/rayon/nouvelles">Nouvelles</a></li>
-            <li><a href="/rayon/poesie">Poésie</a></li>
-            <li><a href="/rayon/recits-de-voyage">Récits de voyage</a></li>
-            <li><a href="/rayon/autobiographies-memoires-temoignages">(Auto)/biographies, mémoires...</a></li>
-              <li><a href="/rayon/jeunesse">Jeunesse</a></li>
-              <li><a href="/rayon/bandes-dessinees">BD</a></li>
-              <li><a href="/rayon/vie-pratique">Vie pratique</a></li>
-              <li><a href="/rayon/beaux-livres">Beaux-livres</a></li>
-              <li><a href="/rayon/arts">Art, musique, danse, cinéma</a></li>
-              <li><a href="/rayon/soldes">Soldes</a></li>
-              <li><a href="/rayon/papeterie">Papeterie</a></li>
-              <li><a href="/rayon/ecologie">Écologie</a></li>
-              <li><a href="/rayon/feminisme">Féminisme</a></li>
-              <li><a href="/rayon/luttes">Luttes</a></li>
-              <li><a href="/rayon/macle-alpha">MaClé Alpha</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h1 class="col-title">Informations</h1>
-            <ul class="footer-list">
-              <li><a href="/contact/">Contact</a></li>
-              <li><a href="/pages/livraison">Livraison</a></li>
-              <li><a href="/pages/mentions-legales">Mentions légales</a></li>
-              <li>
-                <a href="/pages/conditions-generales-de-vente">Conditions générales de vente</a>
-              </li>
-              <li><a href="/blog/">Blog</a></li>
-              <li><a href="/pages/faq">FAQ</a></li>
-              <li><a href="/pages/qui-sommes-nous">Qui sommes-nous ?</a></li>
-              <li><a href="/pages/rejoignez-nous">Rejoignez-nous</a></li>
-              <li><a href="https://soundcloud.com/user-1581137" target="_blank">Podcasts</a></li>
-              <li><a href="/pages/plan-du-site">Plan du site</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h1 class="col-title">Mon compte</h1>
-            <ul class="footer-list">
-              <li><a href="/pages/log_myorders">Mes commandes</a></li>
-              <li><a href="https://axys.me">Mes informations personnelles</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="powered-by">
-          <a href="http://www.biblys.fr/" target="_blank">
-            <img
-              src="/assets/images/propulse-par-biblys.png"
-              alt="Propulsé par Biblys"
-              class="powered-by-image"
-            />
-          </a>
-        </div>
-      </footer>
+        <h1 class="col-title">Une question ?</h1>
+        <p class="col-text">
+          Si vous ne trouvez pas la réponse à votre question dans la FAQ, ou si vous souhaitez
+          nous faire part de vos remarques (ou nous complimenter), n’hésitez pas à
+          <a href="/contact/">nous contacter</a>. Notre équipe de bénévoles se fera un plaisir
+          de vous répondre.
+        </p>
+      </div>
     </div>
 
-    {% include "layout:_assets_js.html.twig" %}
-    </body>
+    <div class="footer-row">
+      <div class="footer-col">
+        <h1 class="col-title">Rayons</h1>
+        <ul class="footer-list">
+          <li><a href="/rayon/nouveautes">Nouveautés</a></li>
+          <li><a href="/rayon/coups-de-coeur-des-benevoles">Coups de cœur des bénévoles</a></li>
+          <li><a href="/rayon/livres-numeriques">Livres numériques</a></li>
+          <li><a href="/rayon/essais">Essais</a></li>
+          <li><a href="/rayon/litterature">Littérature</a></li>
+          <li><a href="/rayon/romans">Romans</a></li>
+          <li><a href="/rayon/nouvelles">Nouvelles</a></li>
+          <li><a href="/rayon/poesie">Poésie</a></li>
+          <li><a href="/rayon/recits-de-voyage">Récits de voyage</a></li>
+          <li><a href="/rayon/autobiographies-memoires-temoignages">(Auto)/biographies, mémoires...</a></li>
+          <li><a href="/rayon/jeunesse">Jeunesse</a></li>
+          <li><a href="/rayon/bandes-dessinees">BD</a></li>
+          <li><a href="/rayon/vie-pratique">Vie pratique</a></li>
+          <li><a href="/rayon/beaux-livres">Beaux-livres</a></li>
+          <li><a href="/rayon/arts">Art, musique, danse, cinéma</a></li>
+          <li><a href="/rayon/soldes">Soldes</a></li>
+          <li><a href="/rayon/papeterie">Papeterie</a></li>
+          <li><a href="/rayon/ecologie">Écologie</a></li>
+          <li><a href="/rayon/feminisme">Féminisme</a></li>
+          <li><a href="/rayon/luttes">Luttes</a></li>
+          <li><a href="/rayon/macle-alpha">MaClé Alpha</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h1 class="col-title">Informations</h1>
+        <ul class="footer-list">
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/pages/livraison">Livraison</a></li>
+          <li><a href="/pages/mentions-legales">Mentions légales</a></li>
+          <li>
+            <a href="/pages/conditions-generales-de-vente">Conditions générales de vente</a>
+          </li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/pages/faq">FAQ</a></li>
+          <li><a href="/pages/qui-sommes-nous">Qui sommes-nous ?</a></li>
+          <li><a href="/pages/rejoignez-nous">Rejoignez-nous</a></li>
+          <li><a href="https://soundcloud.com/user-1581137" target="_blank">Podcasts</a></li>
+          <li><a href="/pages/plan-du-site">Plan du site</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h1 class="col-title">Mon compte</h1>
+        <ul class="footer-list">
+          <li><a href="/pages/log_myorders">Mes commandes</a></li>
+          <li><a href="https://axys.me">Mes informations personnelles</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="powered-by">
+      <a href="http://www.biblys.fr/" target="_blank">
+        <img
+          src="/assets/images/propulse-par-biblys.png"
+          alt="Propulsé par Biblys"
+          class="powered-by-image"
+        />
+      </a>
+    </div>
+  </footer>
+</div>
+
+{% include "layout:_assets_js.html.twig" %}
+</body>
 </html>
