@@ -247,7 +247,19 @@ h1.page-title {
 }
 
 .site-footer .powered-by {
+  font-size: 0.8em;
+  margin: 8px 0 32px;
   text-align: center;
+  text-transform: none;
+}
+
+.site-footer .powered-by a {
+  background: #ff6600;
+  border-radius: 4px;
+  color: white;
+  display: inline-block;
+  padding: 2px 4px;
+  text-decoration: none;
 }
 
 .site-footer .footer-picto {
