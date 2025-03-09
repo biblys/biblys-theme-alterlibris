@@ -45,7 +45,8 @@
 
   {{ app.metaTags|raw }}
 
-  <link rel="alternate" type="application/rss+xml" title="Le blog Dystopia" href="/feeds/blog.rss.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Les dernières billets du blog" href="{{ path('feed_blog') }}" />
+  <link rel="alternate" type="application/rss+xml" title="Les dernières parutions du catalogue" href="{{ path('feed_catalog') }}" />
 
   {% include "layout:_analytics.html.twig" %}
 </head>
@@ -114,7 +115,7 @@
           <span aria-label="Instagram" class="social-icon fa-brands fa-instagram"></span>
         </a>
 
-        <a class="social-button" href="/feeds/blog.rss.xml" title="Flux RSS">
+        <a class="social-button" href="{{ path('feed_index') }}" title="Flux RSS">
           <span aria-label="Flux RSS" class="social-icon fa-solid fa-rss"></span>
         </a>
 
