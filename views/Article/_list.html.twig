@@ -21,9 +21,7 @@
 				</a>
 			</p>
 			<p class="article-publisher">
-				<a class="article-publisher-link" href="{{ path("publisher_show", { slug: article.publisher.url }) }}">
-					{{ article.publisher.name }}
-				</a>
+				{{ article.publisher }}
 			</p>
       {% if article.has('price') %}
         <p class="article-price">{{ article.price|currency('EUR')|raw }}</p>
