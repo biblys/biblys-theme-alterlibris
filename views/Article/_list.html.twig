@@ -21,7 +21,7 @@
 				</a>
 			</p>
 			<p class="article-publisher">
-				{{ article.publisher }}
+				{{ article.publisher.name }}
 			</p>
       {% if article.has('price') %}
         <p class="article-price">{{ article.price|currency('EUR')|raw }}</p>
